@@ -10,5 +10,9 @@ Router.route('/appsuket/umum', {
 Router.route('/appsuket/staff', {
   template: "appsuketstaff"
 })
-// Router.route('/appktp');
-// Router.route('/appperizinan');
+Router.route('/appsuket/kasi', {
+  template: "appsuketkasi"
+})
+Router.route('/appsuket/cetak', {
+  template: "appsuketstaffcetak"
+})

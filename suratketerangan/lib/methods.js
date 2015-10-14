@@ -1,8 +1,8 @@
 Meteor.methods({
-    'saveSuketKelahiran': function saveSuketKelahiran(jenisSuket, namaAnak, tanggalLahir, hariLahir, jamLahir, jenisKelamin, tempatLahir, 
+    'saveSuketKelahiran': function(jenisSuket, namaAnak, tanggalLahir, hariLahir, jamLahir, jenisKelamin, tempatLahir, 
     namaIbu, nikIbu, umurIbu, pekerjaanIbu, alamatIbu, 
     namaAyah, nikAyah, umurAyah, pekerjaanAyah, alamatAyah, 
-    namaPelapor, nikPelapor, umurPelapor, pekerjaanPelapor, alamatPelapor, hubPelapor, status, keterangan){
+    namaPelapor, nikPelapor, umurPelapor, pekerjaanPelapor, alamatPelapor, hubPelapor, status){
       //Router.go("/appsuket/download");
       var date = new Date();
       return Kelahiran.insert({
@@ -33,16 +33,15 @@ Meteor.methods({
             tanggalUpdate: "",
             tanggalCetak: "",
             status: status,
-            keterangan: keterangan
+            keterangan:"",
+            komentarStaff:"",
+            komentarKasi:""
         });
     },
-    'deleteSuketKelahiran': function deleteSuketKelahiran(id){
+    'deleteSuketKelahiran': function (id){
       Kelahiran.remove({_id:id});
     },
-    'viewSuketKelahiran': function viewSuketKelahiran(id){
-      Kelahiran.find({ _id:id })
-    },
-    'editSuketKelahiran': function editSuketKelahiran(id, namaAnak, tanggalLahir, hariLahir, jamLahir, jenisKelamin, tempatLahir, 
+    'editSuketKelahiran': function(id, namaAnak, tanggalLahir, hariLahir, jamLahir, jenisKelamin, tempatLahir, 
     namaIbu, nikIbu, umurIbu, pekerjaanIbu, alamatIbu, 
     namaAyah, nikAyah, umurAyah, pekerjaanAyah, alamatAyah, 
     namaPelapor, nikPelapor, umurPelapor, pekerjaanPelapor, alamatPelapor, hubPelapor, tglUpdate, keterangan){
@@ -78,19 +77,29 @@ Meteor.methods({
         }}
       );
     },
-    'editStatusSuketKelahiran': function editStatusSuketKelahiran(id, tglUpdate, status){
+    'approvalStaf': function(id, tglUpdate, status, komentarStaff, keterangan){
+      Kelahiran.update(id, 
+        { $set:
+              {
+                tanggalUpdate:tglUpdate,
+                status:status,
+                komentarStaff:komentarStaff,
+                keterangan:keterangan
+              }
+        });
+    },
+    'approvalKasi': function(id, tglUpdate, status, komentarKasi){
       Kelahiran.update(
-        {
-          _id:id
-        }, {$set:
+        id, {$set:
         {
           tanggalUpdate:tglUpdate,
-          status:status
-        }}
-      );
+          status:status,
+          komentarKasi:komentarKasi
+        }
+      });
     },
-    'editTglCetakSuketKelahiran': function editTglCetakSuketKelahiran(id, tglUpdate, tglCetak, status){
-      Kelahiran.update({_id:id},{$set:{
+    'cetakSuket': function(id, tglUpdate, tglCetak, status){
+      Kelahiran.update(id,{$set:{
         tanggalUpdate:tglUpdate,
         tanggalCetak:tglCetak,
         status:status

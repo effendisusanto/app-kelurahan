@@ -50,7 +50,8 @@
           console.log(error.reason);
           return;
         }
-        Router.go("/appsuket/download/" + result);
+        alert("Permohonan Surat Keterangan Kelahiran anda sudah di terima");
+        //Router.go("/appsuket/download/" + result);
         });
     }
 });
