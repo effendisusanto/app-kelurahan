@@ -50,8 +50,15 @@
           console.log(error.reason);
           return;
         }
-        alert("Permohonan Surat Keterangan Kelahiran anda sudah di terima");
+        Session.set("noPendaftaran", result);
+        $("#myModal").modal("show");
         //Router.go("/appsuket/download/" + result);
         });
     }
 });
+
+  Template.appsuketmodal.helpers({
+    noPendaftaran: function(){
+        return Session.get("noPendaftaran");
+    }
+  })
