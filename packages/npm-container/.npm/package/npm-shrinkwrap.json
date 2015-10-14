@@ -1,0 +1,17 @@
+{
+  "dependencies": {
+    "docxtemplater": {
+      "version": "1.0.8",
+      "dependencies": {
+        "jszip": {
+          "version": "2.5.0",
+          "dependencies": {
+            "pako": {
+              "version": "0.2.8"
+            }
+          }
+        }
+      }
+    }
+  }
+}

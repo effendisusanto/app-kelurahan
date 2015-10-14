@@ -1,0 +1,39 @@
+<template name="appsuketstaff">
+  {{>appsuketnavigation}}
+  <div class="container">
+  <div class="table-responsive">
+    <table class="table table-hover">
+      <thead>
+        <tr>
+          <th>Nama Pelapor</th>
+          <th>Jenis Surat Keterangan</th>
+          <th>Tanggal Pembuatan</th>
+          <th>Tanggal Update</th>
+          <th>Tanggal Cetak</th>
+          <th>Status</th>
+          <th>Keterangan</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        {{#each dfts}}
+          {{>appsukettablerowstaff}}
+        {{/each}}
+      </tbody>
+    </table>
+  </div>
+  </div>
+</template>
+
+<template name="appsukettablerowstaff">
+  <tr>
+    <td>{{namaPelapor}}</td>
+    <td>{{jenisSuket}}</td>
+    <td>{{tanggalPembuatan}}</td>
+    <td>{{tanggalUpdate}}</td>
+    <td>{{tanggalCetak}}</td>
+    <td>{{status}}</td>
+    <td>{{keterangan}}</td>
+    <td><button class="btn btn-info btn-xs"><span class="glyphicon glyphicon-search"></span></button> <button class="btn btn-warning btn-xs"><span class="glyphicon glyphicon-pencil"></span></button> <button class="btn btn-danger btn-xs"><span class="glyphicon glyphicon-remove"></span></button></td>
+  </tr>
+</template>

@@ -1,0 +1,1 @@
+Kelahiran = new Mongo.Collection('Kelahiran');

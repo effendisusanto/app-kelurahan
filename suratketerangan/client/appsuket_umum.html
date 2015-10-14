@@ -1,0 +1,37 @@
+<template name="appsuketumum">
+  {{>appsuketnavigation}}
+  <div class="container">
+  <div class="table-responsive">
+    <table class="table table-hover">
+      <thead>
+        <tr>
+          <th>Nama Pelapor</th>
+          <th>Jenis Surat Keterangan</th>
+          <th>Tanggal Pembuatan</th>
+          <th>Tanggal Update</th>
+          <th>Tanggal Cetak</th>
+          <th>Status</th>
+          <th>Keterangan</th>
+        </tr>
+      </thead>
+      <tbody>
+        {{#each dfts}}
+          {{>appsukettablerowumum}}
+        {{/each}}
+      </tbody>
+    </table>
+  </div>
+  </div>
+</template>
+
+<template name="appsukettablerowumum">
+  <tr>
+    <td>{{namaPelapor}}</td>
+    <td>{{jenisSuket}}</td>
+    <td>{{tanggalPembuatan}}</td>
+    <td>{{tanggalUpdate}}</td>
+    <td>{{tanggalCetak}}</td>
+    <td>{{status}}</td>
+    <td>{{keterangan}}</td>
+  </tr>
+</template>
