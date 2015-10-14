@@ -1,0 +1,35 @@
+<template name="appsuketstaffcetak">
+  {{>appsuketnavigation}}
+  <div class="container">
+  <div class="table-responsive">
+    <table class="table table-hover">
+      <thead>
+        <tr>
+          <th>Nama Pelapor</th>
+          <th>Jenis Surat Keterangan</th>
+          <th>Tanggal Pembuatan</th>
+          <th>Keterangan</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        {{#each dfts}}
+          {{>appsukettablerowcetak}}
+        {{/each}}
+      </tbody>
+    </table>
+  </div>
+  </div>
+</template>
+
+<template name="appsukettablerowcetak">
+  <tr>
+    <td>{{namaPelapor}}</td>
+    <td>{{jenisSuket}}</td>
+    <td>{{tanggalPembuatan}}</td>
+    <td>{{keterangan}}</td>
+    <td>
+    <button class="btn btn-info btn-xs"><span class="glyphicon glyphicon-print"></span> Cetak</button> 
+    </td>
+  </tr>
+</template>

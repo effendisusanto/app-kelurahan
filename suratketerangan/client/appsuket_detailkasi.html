@@ -1,0 +1,178 @@
+<template name="appsuketdetailinfokasi">
+<div class="modal fade" id="modaldetail">
+  <div class="modal-dialog" style="width: 80%; height: 90%">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title">Informasi Detail</h4>
+      </div>
+      <div class="modal-body">
+			<div class="row">
+		      	<div class="col-md-3">
+			        <div class="form-group">
+			          <label for="namaAnak">Nama Anak</label>
+			          <input type="text" class="form-control" id="namaAnak" disabled="disabled" />
+			        </div>
+			        <div class="form-group">
+			          <label for="tglLahir">Hari</label>
+			          <div class='input-group date' id="hariLahirday">
+			            <input type='text' class="form-control" id="hariLahir" disabled="disabled" />
+			              <span class="input-group-addon">
+			                  <span class="glyphicon glyphicon-calendar"></span>
+			              </span>
+			          </div>
+			        </div>
+			        <div class="form-group">
+			          <label for="tglLahir">Tanggal</label>
+			          <div class='input-group date' id="tglLahirdate">
+			            <input type='text' class="form-control" id="tglLahir" disabled="disabled" />
+			              <span class="input-group-addon">
+			                  <span class="glyphicon glyphicon-calendar"></span>
+			              </span>
+			          </div>
+			        </div>
+			        <div class="form-group">
+			          <label for="jamLahir">Pukul</label>
+			          <div class="input-group date" id="jamLahirjam">
+			            <input type='text' class="form-control" id="jamLahir" disabled="disabled" />
+			              <span class="input-group-addon">
+			                  <span class="glyphicon glyphicon-time"></span>
+			              </span>
+			          </div>
+			        </div>
+			        <div class="form-group">
+			          <label for="jenisKelamin">Jenis Kelamin</label>
+			          <select class="selectpicker show-menu-arrow form-control" disabled id="jenisKelamin" >
+			            <option>Laki-Laki</option>
+			            <option>Perempuan</option>
+			          </select>
+			        </div>
+			        <div class="form-group">
+			          <label for="tempatLahir">Tempat Kelahiran</label>
+			          <input type="text" class="form-control" id="tempatLahir" disabled="disabled" />
+			        </div>
+			    </div>
+			    <div class="col-md-3">
+			        <div class="form-group">
+			          <label for="namaIbu">Nama Lengkap Ibu</label>
+			          <input type="text" class="form-control" id="namaIbu" disabled="disabled"/>
+			        </div>
+			        <div class="form-group">
+			          <label for="nikIbu">NIK Ibu</label>
+			          <input type="text" class="form-control" id="nikIbu" disabled="disabled"/>
+			        </div>
+			        <div class="form-group">
+			          <label for="umurIbu">Umur Ibu</label>
+			          <div class='input-group'>
+			            <input type='number' class="form-control" id="umurIbu" disabled="disabled"/>
+			              <span class="input-group-addon">
+			                  tahun
+			              </span>
+			          </div>
+			        </div>
+			        <div class="form-group">
+			          <label for="pekerjaanIbu">Pekerjaan Ibu</label>
+			          <input type="text" class="form-control" id="pekerjaanIbu" disabled="disabled"/>
+			        </div>
+			        <div class="form-group">
+			          <label for="alamatIbu">Alamat Ibu</label>
+			          <input type="text" class="form-control" id="alamatIbu" disabled="disabled"/>
+			        </div>
+			         <div class="form-group">
+			          <label for="hubPelapor">Hubungan Pelapor dengan Bayi</label>
+			          <select class="selectpicker show-menu-arrow form-control" disabled id="hubPelapor">
+			            <option>Ayah</option>
+			            <option>Ibu</option>
+			            <option>Kakek</option>
+			            <option>Nenek</option>
+			            <option>Saudara Ayah</option>
+			            <option>Saudara Ibu</option>
+			          </select>
+			        </div>
+			    </div>
+			    <div class="col-md-3">
+			        <div class="form-group">
+			          <label for="namaAyah">Nama Lengkap Ayah</label>
+			          <input type="text" class="form-control" id="namaAyah" disabled="disabled"/>
+			        </div>
+			        <div class="form-group">
+			          <label for="nikAyah">NIK Ayah</label>
+			          <input type="text" class="form-control" id="nikAyah" disabled="disabled"/>
+			        </div>
+			        <div class="form-group">
+			          <label for="umurAyah">Umur Ayah</label>
+			          <div class='input-group'>
+			            <input type='number' class="form-control" id="umurAyah" disabled="disabled"/>
+			              <span class="input-group-addon">
+			                  tahun
+			              </span>
+			          </div>
+			        </div>
+			        <div class="form-group">
+			          <label for="pekerjaanAyah">Pekerjaan Ayah</label>
+			          <input type="text" class="form-control" id="pekerjaanAyah" disabled="disabled"/>
+			        </div>
+			        <div class="form-group">
+			          <label for="alamatAyah">Alamat Ayah</label>
+			          <input type="text" class="form-control" id="alamatAyah" disabled="disabled"/>
+			        </div>
+			    </div>
+			    <div class="col-md-3">
+			        <div class="form-group">
+			          <label for="namaPelapor">Nama Lengkap Pelapor</label>
+			          <input type="text" class="form-control" id="namaPelapor" disabled="disabled"/>
+			        </div>
+			        <div class="form-group">
+			          <label for="nikPelapor">NIK Pelapor</label>
+			          <input type="text" class="form-control" id="nikPelapor" disabled="disabled"/>
+			        </div>
+			        <div class="form-group">
+			          <label for="umurPelapor">Umur Pelapor</label>
+			          <div class='input-group'>
+			            <input type='number' class="form-control" id="umurPelapor" disabled="disabled"/>
+			              <span class="input-group-addon">
+			                  tahun
+			              </span>
+			          </div>
+			        </div>
+			        <div class="form-group">
+			          <label for="pekerjaanPelapor">Pekerjaan Pelapor</label>
+			          <input type="text" class="form-control" id="pekerjaanPelapor" disabled="disabled"/>
+			        </div>
+			        <div class="form-group">
+			          <label for="alamatPelapor">Alamat Pelapor</label>
+			          <input type="text" class="form-control" id="alamatPelapor" disabled="disabled"/>
+			        </div>
+			    </div>
+			</div>
+			<div class="row">
+				<div class="col-md-12">
+					<div class="form-group">
+			        	<label for="namaAnak">Komentar Staff</label>
+			        	<textarea id="komentarStaff" class="form-control" disabled="disabled"></textarea>
+			    	</div>
+			    </div>
+			    <div class="col-md-12">
+					<div class="form-group">
+			        	<label for="namaAnak">Komentar Kasi</label>
+			        	<textarea id="komentarKasi" class="form-control"></textarea>
+			    	</div>
+			    </div>
+			    <div class="col-md-12">
+					<div class="form-group">
+			        	<label for="namaAnak">Keterangan untuk Pelapor</label>
+			        	<textarea id="keterangan" class="form-control"></textarea>
+			        	<input type="hidden" value="{{_id}}" id="theid"/>
+			    	</div>
+			    </div>
+			</div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Tolak</button>
+        <button type="button" class="btn btn-primary" id="approvalKasi">Acc</button>
+      </div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+
+</template>
