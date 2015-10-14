@@ -1,2 +1,5 @@
 .meteor/local
 .meteor/meteorite
+.c9
+docxdocument/*.docx
+template/*.docx
