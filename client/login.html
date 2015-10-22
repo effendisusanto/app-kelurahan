@@ -1,0 +1,27 @@
+<template name="login">
+	{{#if currentUser}}
+	<div class="navbar-form navbar-right">
+		<!-- Split button -->
+	<div class="btn-group">
+	  <button type="button" class="btn btn-default">{{currentUser.profile.firstName}} {{currentUser.profile.lastName}}</button>
+	  <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+	    <span class="caret"></span>
+	    <span class="sr-only">Toggle Dropdown</span>
+	  </button>
+	  <ul class="dropdown-menu">
+	    <li><a href="#" class="logout">Sign Out</a></li>
+	  </ul>
+	</div>
+	</div>
+	{{else}}
+	<form class="navbar-form navbar-right" id="formLogin">
+	    <div class="form-group">
+	      <input type="email" placeholder="Email" class="form-control" name="email">
+	    </div>
+	    <div class="form-group">
+	      <input type="password" placeholder="Password" class="form-control" name="password">
+	    </div>
+	    <button type="submit" class="btn btn-success">Sign in</button>
+	  </form>
+    {{/if}}
+</template>

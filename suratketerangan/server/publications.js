@@ -1,3 +1,3 @@
-// Meteor.publish("daftar", function(){
-// 	return Kelahiran.find({});
-// })
+Meteor.publish("daftar", function(){
+	return Kelahiran.find({});
+})

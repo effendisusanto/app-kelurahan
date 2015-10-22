@@ -16,3 +16,5 @@ Router.route('/appsuket/kasi', {
 Router.route('/appsuket/cetak', {
   template: "appsuketstaffcetak"
 })
+
+Router.route('/register')
