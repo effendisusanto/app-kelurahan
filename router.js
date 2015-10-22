@@ -17,4 +17,6 @@ Router.route('/appsuket/cetak', {
   template: "appsuketstaffcetak"
 })
 
-Router.route('/register')
+Router.route('/x11A/register',{
+  template: "register"
+})
