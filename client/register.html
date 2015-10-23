@@ -1,4 +1,5 @@
 <template name="register">
+    {{#if isAdmin currentUser.profile.groupLogin}}
     <br/>
     <br/>
     <br/>
@@ -65,4 +66,7 @@
         </form>
     </div>
     </div>
+    {{else}}
+    {{>error404}}
+    {{/if}}
 </template>

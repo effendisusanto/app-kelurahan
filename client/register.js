@@ -18,12 +18,14 @@ Template.register.events({
         Accounts.createUser({
             email: email,
             password: password,
-            namaDepan: namaDepan,
-            namaBelakang: namaBelakang,
-            gelar: gelar,
-            pangkat: pangkat,
-            nip: nip,
-            groupLogin: groupLogin
+            profile:{
+                namaDepan: namaDepan,
+                namaBelakang: namaBelakang,
+                gelar: gelar,
+                pangkat: pangkat,
+                nip: nip,
+                groupLogin: groupLogin
+                }
             }, 
             function(error){
             if(error){
