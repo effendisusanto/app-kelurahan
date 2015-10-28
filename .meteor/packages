@@ -19,7 +19,6 @@ ejson
 spacebars
 check
 iron:router
-kookoskar:bootstrap-select
 tsega:bootstrap3-datetimepicker
 momentjs:moment
 rzymek:moment-locale-id
@@ -28,3 +27,4 @@ meteorhacks:npm
 
 npm-container
 accounts-password
+mrt:bootstrap-select
