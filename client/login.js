@@ -5,9 +5,23 @@ Template.login.events({
         var password = $('[name=password]').val();
         Meteor.loginWithPassword(email, password, function(error){
 	    	if(error){
-	        	console.log(error.reason);
+                alert(error.reason)
 	    	} else {
-	        	Router.go("/");
+	        	var groupLogin = Meteor.user().profile.groupLogin
+                switch(groupLogin){
+                    case "Administrator":
+                        Router.go("/appsuket")
+                        break;
+                    case "Staff":
+                        Router.go("/appsuket/staff")
+                        break;
+                    case "Kasi":
+                        Router.go("/appsuket/kasi")
+                        break;
+                    default:
+                        Router.go("/")
+                        break;
+                }
 	    	}
 		});
     },
