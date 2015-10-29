@@ -29,6 +29,19 @@
             <li><a href="/appsuket/cetak">Halaman Cetak</a></li>
           </ul>
           {{/if}}
+          {{#if isStaff currentUser.profile.groupLogin}}
+          <ul class="nav navbar-nav">
+            <li><a href="/appsuket/staff">Halaman Staff</a></li>
+          </ul>
+          <ul class="nav navbar-nav">
+            <li><a href="/appsuket/cetak">Halaman Cetak</a></li>
+          </ul>
+          {{/if}}
+          {{#if isKasi currentUser.profile.groupLogin}}
+          <ul class="nav navbar-nav">
+            <li><a href="/appsuket/kasi">Halaman Kasi</a></li>
+          </ul>
+          {{/if}}
         </div><!--/.nav-collapse -->
       </div>
     </nav>
