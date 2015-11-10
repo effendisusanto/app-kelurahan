@@ -6,3 +6,4 @@ docxdocument/*.docx
 template/*.docx
 build/*
 meteor.sublime-project
+meteor.sublime-workspace
