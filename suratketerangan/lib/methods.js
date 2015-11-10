@@ -104,5 +104,122 @@ Meteor.methods({
         tanggalCetak:tglCetak,
         status:status
       }});
+    },
+    'saveKtp': function(no_ktp, nama){
+      ktp.insert({
+        "no_ktp" :  no_ktp,
+        "name" :  nama
+      })
+    },
+    'saveMiskin': function(no_surat,
+                           tg_surat,   
+                           nm_miskin,
+                           tl_miskin, 
+                           tg_miskin,
+                           sex_miskin,
+                           pek_miskin,
+                           alm_miskin,
+                           note_untuk,
+                           an_untuk,
+                           nm_untuk,
+                           tl_untuk,
+                           tg_untuk,
+                           sex_untuk,
+                           pek_untuk,
+                           alm_untuk,
+                           ttd_tg,
+                           ttd_nm,
+                           ttd_jabat,
+                           status,
+                           ttd_komentar)
+    {
+      return  miskin.insert({
+          "no_surat" : no_surat,
+          "tg_surat" : tg_surat,   
+          "nm_miskin": nm_miskin,
+          "tl_miskin": tl_miskin, 
+          "tg_miskin": tg_miskin,
+          "sex_miskin": sex_miskin,
+          "pek_miskin": pek_miskin,
+          "alm_miskin": alm_miskin,
+          "note_untuk" : note_untuk,
+          "an_untuk" : an_untuk,
+          "nm_untuk" : nm_untuk,
+          "tl_untuk" : tl_untuk,
+          "tg_untuk" : tg_untuk,
+          "sex_untuk" : sex_untuk,
+          "pek_untuk": pek_untuk,
+          "alm_untuk": alm_untuk,
+          "ttd_tg" : ttd_tg,
+          "ttd_nm" : ttd_nm,
+          "ttd_jabat": ttd_jabat,
+          "status": status
+        })               
+    },
+    'deleteMiskin': function (id){
+      miskin.remove({_id:id});
+    },
+    'updateMiskin': function(no_surat,
+                           tg_surat,   
+                           nm_miskin,
+                           tl_miskin, 
+                           tg_miskin,
+                           sex_miskin,
+                           pek_miskin,
+                           alm_miskin,
+                           note_untuk,
+                           an_untuk,
+                           nm_untuk,
+                           tl_untuk,
+                           tg_untuk,
+                           sex_untuk,
+                           pek_untuk,
+                           alm_untuk,
+                           ttd_tg,
+                           ttd_nm,
+                           ttd_jabat,
+                           status,
+                           ttd_komentar)
+    {
+        miskin.update(
+        {
+          _id : id
+        }, {$set:
+        {
+          no_surat : no_surat,
+          tg_surat : tg_surat,   
+          nm_miskin : nm_miskin,
+          tl_miskin : tl_miskin, 
+          tg_miskin : tg_miskin,
+          sex_miskin : sex_miskin,
+          pek_miskin : pek_miskin,
+          alm_miskin : alm_miskin,
+          note_untuk : note_untuk,
+          an_untuk : an_untuk,
+          nm_untuk : nm_untuk,
+          tl_untuk : tl_untuk,
+          tg_untuk : tg_untuk,
+          sex_untuk : sex_untuk,
+          pek_untuk : pek_untuk,
+          alm_untuk : alm_untuk
+        }});
+    },
+     'approvalMiskin': function(id,  
+                           ttd_tg,
+                           ttd_nm,
+                           ttd_jabat,
+                           status,
+                           ttd_komentar){
+      miskin.update(id, 
+        { $set:
+              {
+                ttd_tg:ttd_tg,
+                ttd_nm:ttd_nm,
+                ttd_jabat:ttd_jabat,
+                status:status,
+                ttd_komentar: ttd_komentar
+              }
+        });
     }
+    
   });

@@ -1,0 +1,36 @@
+<template name="ktp_daftar">
+<head><title>KTP</title></head>
+<body>
+    <br/>
+    {{> tambah_ktp }}
+    <br/>
+    {{> daftar_ktp }}
+
+</body>
+</template>
+
+<template name="tambah_ktp">
+<div class="widget-box">
+    <div class="control-group">
+		<label class="control-label" for="no_ktp">No KTP</label>
+		<div class="controls">
+			<input type="text" id="no_ktp" placeholder="No KTP">
+		</div>
+	</div>
+	<div class="control-group">
+		<label class="control-label" for="nama">Nama</label>
+		<div class="controls">
+			<input type="text" id="nama" placeholder="Nama">
+		</div>
+	</div>
+    <button class="submit btn btn-info">Simpan</button>
+</div>    
+</template>
+
+<template name="daftar_ktp">
+    <ul>
+        {{#each all_ktp}}
+        <li>{{no_ktp}} - {{name}}</li>
+        {{/each}}
+    </ul>
+</template>

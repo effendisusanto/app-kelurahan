@@ -1,0 +1,60 @@
+<template name="tmp_add_miskin">
+	<div class="row"> <!-- Page Header -->
+	  <div class="col-lg-12">
+	      <h1 class="page-header">Miskin</h1>
+	  </div>
+	</div>
+	<div class="row">
+		<form>
+		  <div class="form-group">
+		    <label for="no_surat">No.Surat</label>
+			<input type="text" class="form-control" id="no_surat" placeholder="No.Surat">
+		  </div>
+		  <div class="form-group">
+		    <label for="nm_miskin">Nama Pemohon</label>
+			<input type="text" class="form-control" id="nm_miskin" placeholder="Nama Pemohon">
+		  </div>
+		  <div class="form-group">
+		    <label for="tl_miskin">Tempat Lahir</label>
+			<input type="text" class="form-control" id="tl_miskin" placeholder="Tempat Lahir">
+		  </div>
+		  <div class="form-group">
+			<label  for="tg_miskin">Tanggal Lahir</label>
+			<div class='input-group date' id="tg_miskin_grp">
+		              <input type='text' class="form-control" id="tg_miskin"  placeholder="Tanggal Lahir" data-error="harus diisi" readonly="readonly" required/>
+		              <span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span></span>
+		              <div class="help-block with-errors"></div>
+		         </div>
+		  </div>
+		  <div class="form-group">
+				<label  for="sex_miskin">Jenis Kelamin</label>
+				<select class="selectpicker show-menu-arrow form-control" id="sex_miskin">
+		                <option>Laki-laki</option>
+		                <option>Perempuan</option>
+		         </select>
+		  </div>
+		  <div class="form-group">
+				<label  for="pek_miskin">Pekerjaan </label>
+				<input type="text" id="pek_miskin" class="form-control" placeholder="Pekerjaan Pemohon">
+		  </div>
+		  <div class="form-group">
+				<label  for="alm_miskin">Alamat </label>
+				<input type="text" id="alm_miskin" class="form-control" placeholder="Alamat Pemohon">
+		  </div>
+		  <div class="form-group">
+				<label  for="note_untuk">Keperluan </label>
+				<input type="text" id="note_untuk" class="form-control" placeholder="Untuk Keperluan">
+		  </div>
+		   <div class="checkbox">
+		    <label>
+		      <input type="checkbox" id="checkUntuk"> Check Untuk Keperluan
+		    </label>
+		  </div>
+		  <button class="submit btn btn-info">Simpan</button>
+		</form>
+	</div>
+</template>
+
+<template name="tmp_add_untuk">
+	<label >Keperluan Untuk Apa saja </label>
+</template>

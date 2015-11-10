@@ -1,22 +1,27 @@
+// Router.route('/', {
+//     template: "home"
+// });
 Router.route('/', {
-    template: "home"
-});
-Router.route('/appsuket', {
     template: "appsuket"
 });
-Router.route('/appsuket/umum', {
+Router.route('/umum', {
   template: "appsuketumum"
 })
-Router.route('/appsuket/staff', {
+Router.route('/staff', {
   template: "appsuketstaff"
 })
-Router.route('/appsuket/kasi', {
+Router.route('/kasi', {
   template: "appsuketkasi"
 })
-Router.route('/appsuket/cetak', {
+Router.route('/cetak', {
   template: "appsuketstaffcetak"
 })
-
 Router.route('/x11A/register',{
   template: "register"
+})
+Router.route('/ktp/daftar_ktp', {
+  template: "ktp_daftar"
+})
+Router.route('/appsuket/miskin', {
+  template: "tmp_add_miskin"
 })

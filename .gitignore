@@ -5,3 +5,4 @@
 docxdocument/*.docx
 template/*.docx
 build/*
+meteor.sublime-project
