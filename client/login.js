@@ -1,3 +1,8 @@
+
+Template.login.onRendered(function() {
+    this.$('#formLogin').validator();
+});
+
 Template.login.events({
     'submit #formLogin': function(event){
         event.preventDefault();
@@ -10,7 +15,8 @@ Template.login.events({
 	        	var groupLogin = Meteor.user().profile.groupLogin
                 switch(groupLogin){
                     case "Administrator":
-                        Router.go("/appsuket")
+                        $('#page-wrapper').html("");
+                        UI.insert(UI.render(Template.appsukethome), $('#page-wrapper').get(0));
                         break;
                     case "Staff":
                         Router.go("/appsuket/staff")

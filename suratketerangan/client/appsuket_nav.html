@@ -10,6 +10,7 @@
       <a class="navbar-brand" href="index.html">Kelurahan Kraksaan Wetan</a>
   </div>
   <!-- /.navbar-header -->
+  {{#if currentUser}}
   <ul class="nav navbar-top-links navbar-right">
       <!-- /.dropdown -->
       <li class="dropdown">
@@ -22,13 +23,14 @@
               <li><a href="#"><i class="fa fa-gear fa-fw"></i> Settings</a>
               </li>
               <li class="divider"></li>
-              <li><a href="login.html"><i class="fa fa-sign-out fa-fw"></i> Logout</a>
+              <li><a href="#" id="Logout"><i class="fa fa-sign-out fa-fw"></i> Logout</a>
               </li>
           </ul>
           <!-- /.dropdown-user -->
       </li>
       <!-- /.dropdown -->
   </ul>
+  {{/if}}
   <!-- /.navbar-top-links -->
   <div class="navbar-default sidebar" role="navigation">
       <div class="sidebar-nav navbar-collapse">
@@ -59,6 +61,23 @@
                   <li>
                       <a href="#" id="miskin"><i class="fa fa-file-text-o fa-fw"></i> Miskin</a>
                   </li>
+              </ul>
+            </li>
+            <li>
+              <a href="#"><i class="fa fa-cogs fa-fw"></i> Administrasi <span class="fa arrow"></span></a>
+              <ul class="nav nav-second-level collapse">
+                  {{#if currentUser}}
+                  <li>
+                      <a href="#" id="Logout"><i class="fa fa-sign-out fa-fw"></i> Logout</a>
+                  </li>
+                  <li>
+                      <a href="#" id="Register"><i class="fa fa-plus fa-fw"></i> Register</a>
+                  </li>
+                  {{else}}
+                  <li>
+                      <a href="#" id="Login"><i class="fa fa-sign-in fa-fw"></i> Login</a>
+                  </li>
+                  {{/if}}
               </ul>
             </li>
           </ul>

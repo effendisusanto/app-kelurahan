@@ -18,5 +18,17 @@ Template.appsuketnavigation.events({
 	'click #miskin': function(){
 		$('#page-wrapper').html("");
 		return UI.insert(UI.render(Template.tmp_add_miskin), $('#page-wrapper').get(0));
-	}
+	},
+	'click #Login': function(){
+		$('#page-wrapper').html("");
+		return UI.insert(UI.render(Template.login), $('#page-wrapper').get(0));
+	},
+	'click #Register': function(){
+		$('#page-wrapper').html("");
+		return UI.insert(UI.render(Template.register), $('#page-wrapper').get(0));
+	},
+	'click #Logout': function(event){
+        event.preventDefault();
+        Meteor.logout();
+    }
 })

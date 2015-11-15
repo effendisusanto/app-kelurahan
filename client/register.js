@@ -1,5 +1,5 @@
 Template.register.onRendered(function() {
-    this.$('.register').validator();
+    this.$('#formRegister').validator();
     this.$('.selectpicker').selectpicker();
 });
 
