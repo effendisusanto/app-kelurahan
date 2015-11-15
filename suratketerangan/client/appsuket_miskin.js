@@ -1,5 +1,15 @@
 Meteor.subscribe("miskin");
 
+Template.tmp_add_miskin.onRendered(function() {
+    this.$('#formMiskin').validator();
+    this.$('.selectpicker').selectpicker();
+    this.$('#tg_miskin_grp').datetimepicker({
+      format: 'D MMMM YYYY',
+      locale: moment.locale('id'),
+      ignoreReadonly: true
+    });
+  });
+
 Template.tmp_add_miskin.events({
     "click .submit": function(){
         no_surat   =  $("#no_surat").val(),

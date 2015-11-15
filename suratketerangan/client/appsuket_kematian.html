@@ -8,6 +8,7 @@
   <div class="row">
     <form class="form-horizontal" role="form" data-toggle="validator" id="formKematian">
       <div class="row">
+      <div class="col-md-12">
         <div class="form-group">
           <div class="Control-label col-xs-4 col-md-offset-1"><h3>Keterangan Perihal Almarhum</h3></div>
         </div>
@@ -67,20 +68,24 @@
           </div>
         </div>
       </div>
+      </div>
       <div class="row">
+      <div class="col-md-12">
         <div class="form-group">
           <div class="Control-label col-xs-4 col-md-offset-1"><h3>Keterangan Perihal Kematian</h3></div>
         </div>
         <div class="form-group">
           <label for="hariKematian"  class="control-label col-xs-2 col-md-offset-1">Hari</label>
           <div class="col-xs-4">
-          <div class='input-group date' id="hariKematianClass">
-            <input type='text' class="form-control" id="hariKematian" data-error="harus diisi" readonly="readonly" required/>
-              <span class="input-group-addon">
-                  <span class="glyphicon glyphicon-calendar"></span>
-              </span>
-              <div class="help-block with-errors"></div>
-          </div>
+            <select class="selectpicker show-menu-arrow form-control" id="hariKematianClass">
+              <option>Senin</option>
+              <option>Selasa</option>
+              <option>Rabu</option>
+              <option>Kamis</option>
+              <option>Jumat</option>
+              <option>Sabtu</option>
+              <option>Minggu</option>
+            </select>
           </div>
         </div>
         <div class="form-group">
@@ -103,7 +108,9 @@
           </div>
         </div>
       </div>
+      </div>
       <div class="row">
+      <div class="col-md-12">
         <div class="form-group">
           <div class="Control-label col-xs-4 col-md-offset-1"><h3>Keterangan Perihal Pelapor</h3></div>
         </div>
@@ -147,6 +154,7 @@
             <button class="btn btn-success" id="suratKelahiran" type="submit">Buatkan Surat</button>
           </div>
         </div>
+      </div>
       </div>
     </form>
   </div>

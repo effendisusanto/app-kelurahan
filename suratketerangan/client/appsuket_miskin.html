@@ -5,7 +5,8 @@
 	  </div>
 	</div>
 	<div class="row">
-		<form>
+		<div class="col-md-12">
+		<form form role="form" data-toggle="validator" id="formMiskin">
 		  <div class="form-group">
 		    <label for="no_surat">No.Surat</label>
 			<input type="text" class="form-control" id="no_surat" placeholder="No.Surat">
@@ -21,10 +22,10 @@
 		  <div class="form-group">
 			<label  for="tg_miskin">Tanggal Lahir</label>
 			<div class='input-group date' id="tg_miskin_grp">
-		              <input type='text' class="form-control" id="tg_miskin"  placeholder="Tanggal Lahir" data-error="harus diisi" readonly="readonly" required/>
-		              <span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span></span>
-		              <div class="help-block with-errors"></div>
-		         </div>
+              <input type='text' class="form-control" id="tg_miskin"  placeholder="Tanggal Lahir" data-error="harus diisi" readonly="readonly" required/>
+              <span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span></span>
+              <div class="help-block with-errors"></div>
+		    </div>
 		  </div>
 		  <div class="form-group">
 				<label  for="sex_miskin">Jenis Kelamin</label>
@@ -50,8 +51,9 @@
 		      <input type="checkbox" id="checkUntuk"> Check Untuk Keperluan
 		    </label>
 		  </div>
-		  <button class="submit btn btn-info">Simpan</button>
+		  <button class="submit btn btn-info" type="submit">Simpan</button>
 		</form>
+		</div>
 	</div>
 </template>
 
