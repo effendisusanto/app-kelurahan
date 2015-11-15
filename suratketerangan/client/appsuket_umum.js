@@ -1,5 +1,5 @@
 Template.appsuketumum.helpers({
 	dfts: function(){
-		return Kelahiran.find({}, {sort: {tanggalPembuatan: -1}});
+		return Main.find({}, {sort: {tanggalPembuatan: -1}});
 	}
 });

@@ -3,9 +3,10 @@ Meteor.methods({
     namaIbu, nikIbu, umurIbu, pekerjaanIbu, alamatIbu, 
     namaAyah, nikAyah, umurAyah, pekerjaanAyah, alamatAyah, 
     namaPelapor, nikPelapor, umurPelapor, pekerjaanPelapor, alamatPelapor, hubPelapor, status){
-      //Router.go("/appsuket/download");
       var date = new Date();
-      return Kelahiran.insert({
+      var mainId
+      tx.start('add new surat kelahiran')
+      kelahiranId = Kelahiran.insert({
             jenisSuket: jenisSuket,
             namaAnak: namaAnak,
             tanggalLahir: tanggalLahir,
@@ -28,15 +29,21 @@ Meteor.methods({
             umurPelapor: umurPelapor,
             pekerjaanPelapor: pekerjaanPelapor,
             alamatPelapor: alamatPelapor,
-            hubPelapor: hubPelapor,
-            tanggalPembuatan: moment(date).format("dddd, D MMMM YYYY, h:mm"),
-            tanggalUpdate: "",
-            tanggalCetak: "",
-            status: status,
-            keterangan:"",
-            komentarStaff:"",
-            komentarKasi:""
-        });
+            hubPelapor: hubPelapor
+        }, , {tx: true, instant: true});
+      mainId = Main.insert({
+        jenisSuket: jenisSuket,
+        namaPelapor: namaPelapor,
+        tanggalPembuatan: moment(date).format("dddd, D MMMM YYYY, h:mm"),
+        tanggalUpdate: "",
+        tanggalCetak: "",
+        status: status,
+        komentarStaff: "",
+        komentarSeklur: "",
+        idDetail: kelahiranId
+      }, {tx: true, instant: true});
+      tx.commit();
+      return mainId;
     },
     'deleteSuketKelahiran': function (id){
       Kelahiran.remove({_id:id});
