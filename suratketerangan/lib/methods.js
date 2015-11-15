@@ -30,7 +30,7 @@ Meteor.methods({
             pekerjaanPelapor: pekerjaanPelapor,
             alamatPelapor: alamatPelapor,
             hubPelapor: hubPelapor
-        }, , {tx: true, instant: true});
+        }, {tx: true, instant: true});
       mainId = Main.insert({
         jenisSuket: jenisSuket,
         namaPelapor: namaPelapor,
