@@ -19,6 +19,14 @@ Template.appsuketnavigation.events({
 		$('#page-wrapper').html("");
 		return UI.insert(UI.render(Template.tmp_add_miskin), $('#page-wrapper').get(0));
 	},
+	'click #usaha': function(){
+		$('#page-wrapper').html("");
+		return UI.insert(UI.render(Template.usaha), $('#page-wrapper').get(0));
+	},
+	'click #kehilangan': function(){
+		$('#page-wrapper').html("");
+		return UI.insert(UI.render(Template.kehilangan), $('#page-wrapper').get(0));
+	},
 	'click #Login': function(){
 		$('#page-wrapper').html("");
 		return UI.insert(UI.render(Template.login), $('#page-wrapper').get(0));

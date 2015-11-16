@@ -1,0 +1,51 @@
+<template name="usaha">
+	<div class="row"> <!-- Page Header -->
+	  <div class="col-lg-12">
+	      <h1 class="page-header">Surat Keterangan Usaha</h1>
+	  </div>
+	</div>
+	<div class="row">
+		<div class="col-md-12">
+		<form form role="form" data-toggle="validator" id="formUsaha">
+		  <div class="form-group">
+		    <label for="nm_miskin">Nama Pemohon</label>
+			<input type="text" class="form-control" id="namaPemohon" placeholder="Nama Pemohon">
+		  </div>
+		  <div class="form-group">
+            <label for="nik">NIK</label>
+            <input type="text" class="form-control" id="nik" pattern="[0-9]{16}" data-error="harus diisi 16 digit angka" required/>
+            <div class="help-block with-errors"></div>
+          </div>
+		  <div class="form-group">
+		    <label for="tptLahir">Tempat Lahir</label>
+			<input type="text" class="form-control" id="tptLahir" placeholder="Tempat Lahir">
+		  </div>
+		  <div class="form-group">
+			<label  for="tglLahir">Tanggal Lahir</label>
+			<div class='input-group date' id="tg_miskin_grp">
+              <input type='text' class="form-control" id="tglLahir"  placeholder="Tanggal Lahir" data-error="harus diisi" readonly="readonly" required/>
+              <span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span></span>
+              <div class="help-block with-errors"></div>
+		    </div>
+		  </div>
+		  <div class="form-group">
+				<label  for="pekerjaan">Pekerjaan</label>
+				<input type="text" id="pekerjaan" class="form-control" placeholder="Pekerjaan Pemohon">
+		  </div>
+		  <div class="form-group">
+				<label  for="alamat">Alamat </label>
+				<input type="text" id="alamat" class="form-control" placeholder="Alamat Pemohon">
+		  </div>
+		  <div class="form-group">
+				<label  for="jenisUsaha">Jenis Usaha</label>
+				<input type="text" id="jenisUsaha" class="form-control" placeholder="Jenis Usaha">
+		  </div>
+		  <div class="form-group">
+				<label  for="kedudukanUsaha">Kedudukan Usaha</label>
+				<input type="text" id="kedudukanUsaha" class="form-control" placeholder="Kedudukan Usaha">
+		  </div>
+		  <button class="submit btn btn-info" type="submit">Simpan</button>
+		</form>
+		</div>
+	</div>
+</template>
