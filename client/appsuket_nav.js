@@ -27,6 +27,14 @@ Template.appsuketnavigation.events({
 		$('#page-wrapper').html("");
 		return UI.insert(UI.render(Template.kehilangan), $('#page-wrapper').get(0));
 	},
+	'click #skck': function(){
+		$('#page-wrapper').html("");
+		return UI.insert(UI.render(Template.skck), $('#page-wrapper').get(0));
+	},
+	'click #tdkkerja': function(){
+		$('#page-wrapper').html("");
+		return UI.insert(UI.render(Template.ijin_tidakmasukkerja), $('#page-wrapper').get(0));
+	},
 	'click #Login': function(){
 		$('#page-wrapper').html("");
 		return UI.insert(UI.render(Template.login), $('#page-wrapper').get(0));

@@ -1,15 +1,15 @@
-<template name="skck">
-	<div class="row"> <!-- Page Header -->
+<template name="ijin_orangtua">
+    <div class="row"> <!-- Page Header -->
 	  <div class="col-lg-12">
-	      <h1 class="page-header">Surat Keterangan Catatan Kepolisian</h1>
+	      <h1 class="page-header">Surat Ijin Orang Tua</h1>
 	  </div>
 	</div>
 	<div class="row">
 		<div class="col-md-12">
 		<form form role="form" data-toggle="validator" id="formSkck">
 		  <div class="form-group">
-		    <label for="nm_miskin">Nama Pemohon</label>
-			<input type="text" class="form-control" id="namaPemohon" placeholder="Nama Pemohon">
+		    <label for="nm_miskin">Nama Orang Tua</label>
+			<input type="text" class="form-control" id="namaPemohon" placeholder="Nama Orang Tua">
 		  </div>
 		  <div class="form-group">
             <label for="nik">NIK</label>
@@ -29,28 +29,34 @@
 		    </div>
 		  </div>
 		  <div class="form-group">
-          <label for="agama">Agama</label>
-            <select class="selectpicker show-menu-arrow form-control" id="agama">
-              <option>Islam</option>
-              <option>Kristen</option>
-              <option>Katolik</option>
-              <option>Hindu</option>
-              <option>Budha</option>
-              <option>Kong Hu Cu</option>
-            </select>
-        </div>
+				<label  for="alamat">Alamat </label>
+				<input type="text" id="alamat" class="form-control" placeholder="Alamat Pemohon">
+		  </div>
       <div class="form-group">
-        <label for="kebangsaan">Kebangsaan</label>
+        <label for="kebangsaan">Nama Anak</label>
         <input type="text" id="kebangsaan" class="form-control" placeholder="Kebangsaan">
       </div>
+      <div class="form-group">
+		    <label for="tptLahir">Tempat Lahir</label>
+			<input type="text" class="form-control" id="tptLahir" placeholder="Tempat Lahir">
+		  </div>
 		  <div class="form-group">
-				<label for="pekerjaan">Pekerjaan</label>
+			<label  for="tglLahir">Tanggal Lahir</label>
+			<div class='input-group date' id="tg_miskin_grp">
+              <input type='text' class="form-control" id="tglLahir"  placeholder="Tanggal Lahir" data-error="harus diisi" readonly="readonly" required/>
+              <span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span></span>
+              <div class="help-block with-errors"></div>
+		    </div>
+		  </div>
+		  <div class="form-group">
+				<label for="pekerjaan">Pekerjaan/Status</label>
 				<input type="text" id="pekerjaan" class="form-control" placeholder="Pekerjaan Pemohon">
 		  </div>
 		  <div class="form-group">
 				<label  for="alamat">Alamat </label>
 				<input type="text" id="alamat" class="form-control" placeholder="Alamat Pemohon">
 		  </div>
+		  
 		  <div class="form-group">
 				<label  for="keperluan">Keperluan</label>
 				<input type="text" id="keperluan" class="form-control" placeholder="Keperluan">
