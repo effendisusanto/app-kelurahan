@@ -1,8 +1,8 @@
-Template.appsuketnavigation.onRendered(function() {
+Template.navigation.onRendered(function() {
 	this.$("#side-menu").metisMenu();
 })
 
-Template.appsuketnavigation.events({
+Template.navigation.events({
 	'click #home': function(){
 		$('#page-wrapper').html("");
 		return UI.insert(UI.render(Template.appsukethome), $('#page-wrapper').get(0));
@@ -34,6 +34,10 @@ Template.appsuketnavigation.events({
 	'click #tdkkerja': function(){
 		$('#page-wrapper').html("");
 		return UI.insert(UI.render(Template.ijin_tidakmasukkerja), $('#page-wrapper').get(0));
+	},
+	'click #tdkmasuk': function(){
+		$('#page-wrapper').html("");
+		return UI.insert(UI.render(Template.ijin_tidakmasuk), $('#page-wrapper').get(0));
 	},
 	'click #Login': function(){
 		$('#page-wrapper').html("");

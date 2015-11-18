@@ -2,7 +2,7 @@
 //     template: "home"
 // });
 Router.route('/', {
-    template: "appsuket"
+    template: "index"
 });
 Router.route('/umum', {
   template: "appsuketumum"
