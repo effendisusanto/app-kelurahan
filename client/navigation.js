@@ -3,6 +3,7 @@ Template.navigation.onRendered(function() {
 })
 
 Template.navigation.events({
+	// UI.insert(UI.renderWithData(Template.foo, {bar: "baz"}), document.body)
 	'click #home': function(){
 		$('#page-wrapper').html("");
 		return UI.insert(UI.render(Template.appsukethome), $('#page-wrapper').get(0));
