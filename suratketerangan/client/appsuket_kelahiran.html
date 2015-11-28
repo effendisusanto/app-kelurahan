@@ -7,7 +7,10 @@
   <!-- /.row -->
   <div class="row">
     <form role="form" data-toggle="validator" id="formKelahiran">
-        <div class="col-md-3">
+          <div class="form-group">
+			<input class="form-control typeahead" name="lang" type="text" placeholder="Programming language"
+				autocomplete="off" spellcheck="off" data-source="list" data-value-key="name"/>
+		</div>
           <div class="form-group">
             <label for="namaAnak">Nama Anak</label>
             <input type="text" class="form-control" id="namaAnak" data-error="harus diisi" required/>
@@ -57,8 +60,6 @@
             <input type="text" class="form-control" id="tempatLahir" data-error="harus diisi" required/>
             <div class="help-block with-errors"></div>
           </div>
-        </div>
-        <div class="col-md-3">
           <div class="form-group">
             <label for="namaIbu">Nama Lengkap Ibu</label>
             <input type="text" class="form-control" id="namaIbu" data-error="harus diisi" required/>
@@ -100,8 +101,6 @@
               <option>Saudara Ibu</option>
             </select>
           </div>
-        </div>
-        <div class="col-md-3">
           <div class="form-group">
             <label for="namaAyah">Nama Lengkap Ayah</label>
             <input type="text" class="form-control" id="namaAyah" data-error="harus diisi" required/>
@@ -132,8 +131,6 @@
             <input type="text" class="form-control" id="alamatAyah" data-error="harus diisi" required/>
             <div class="help-block with-errors"></div>
           </div>
-        </div>
-        <div class="col-md-3">
           <div class="form-group">
             <label for="namaPelapor">Nama Lengkap Pelapor</label>
             <input type="text" class="form-control" id="namaPelapor" data-error="harus diisi" required/>
@@ -167,7 +164,7 @@
           <div class="form-group">
             <button class="btn btn-success" id="suratKelahiran" type="submit">Buatkan Surat</button>
           </div>
-        </div>
+          <button class="btn btn-success" id="test">Test Modal</button>
       </form>
   </div>
 </template>

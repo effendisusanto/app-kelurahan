@@ -1,4 +1,5 @@
 Template.kelahiran.onRendered(function() {
+  Meteor.typeahead.inject();
     this.$('#formKelahiran').validator();
     this.$('.selectpicker').selectpicker();
     this.$('#hariLahirday').datetimepicker({
@@ -17,11 +18,21 @@ Template.kelahiran.onRendered(function() {
     });
   });
   
+  Template.kelahiran.helpers({
+    list: function() {
+	    return [
+	      {"name": "C#"},
+	      {"name": "JavaScript"},
+	      {"name": "CoffeeScript"}
+	    ];
+	  }
+  });
 
   Template.kelahiran.events({
     'submit #formKelahiran': function(e){
         // Prevent default browser form submit
         if (e.isDefaultPrevented()) {
+          
         // handle the invalid form...
         } else {
             var namaAnak = $("#namaAnak").val()
