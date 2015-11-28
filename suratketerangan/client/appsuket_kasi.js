@@ -45,7 +45,7 @@ Template.appsuketkasi.events({
 		var date = new Date();
 		var status = "Cetak";
 		var keterangan = $('#keterangan').val();
-		Meteor.call("approvalKasi", id, moment(date).format("dddd, D MMMM YYYY, h:mm"), status, komentarKasi);
+		Meteor.call("approvalKasi", id, moment(date).format("dddd, D MMMM YYYY, h:mm"), status, komentarKasi, currentUser.profile.namaDepan);
 		$('#modaldetail').modal('hide')
 	}
 })

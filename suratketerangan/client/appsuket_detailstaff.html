@@ -148,22 +148,16 @@
 			<div class="row">
 				<div class="col-md-12">
 					<div class="form-group">
-			        	<label for="namaAnak">Komentar Staff</label>
+			        	<label for="komentarStaff">Komentar Staff</label>
 			        	<textarea id="komentarStaff" class="form-control"></textarea>
 			    	</div>
 			    </div>
-			    <div class="col-md-12">
-					<div class="form-group">
-			        	<label for="namaAnak">Keterangan untuk Pelapor</label>
-			        	<textarea id="keterangan" class="form-control"></textarea>
-			        	<input type="hidden" value="{{_id}}" id="theid"/>
-			    	</div>
-			    </div>
+			    <input type="hidden" id="theid"/>
 			</div>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">Tolak</button>
-        <button type="button" class="btn btn-primary" id="approvalStaf">Lanjut ke Kasi</button>
+        <button type="button" class="btn btn-default" data-dismiss="modal">Reject</button>
+        <button type="button" class="btn btn-primary" id="approvalStaf">Approve</button>
       </div>
     </div><!-- /.modal-content -->
   </div><!-- /.modal-dialog -->
