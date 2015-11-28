@@ -10,7 +10,7 @@ Router.route('/umum', {
 Router.route('/staff', {
   template: "appsuketstaff"
 })
-Router.route('/kasi', {
+Router.route('/seklur', {
   template: "appsuketkasi"
 })
 Router.route('/cetak', {
