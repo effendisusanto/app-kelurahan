@@ -1,0 +1,32 @@
+<template name="tasktodo">
+  <div class="container">
+    <div class="table-responsive">
+      <table class="table table-hover">
+        <thead>
+          <tr>
+            <th>Nama Pelapor</th>
+            <th>Jenis Surat Keterangan</th>
+            <th>Tanggal Pembuatan</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          {{#each dfts}}
+            {{>appsukettablerow}}
+          {{/each}}
+        </tbody>
+      </table>
+    </div>
+  </div>
+</template>
+
+<template name="appsukettablerow">
+  <tr>
+    <td>{{namaPelapor}}</td>
+    <td>{{jenisSuket}}</td>
+    <td>{{tanggalPembuatan}}</td>
+    <td>
+    <button class="btn btn-info btn-xs"><span class="glyphicon glyphicon-search"></span> Lihat</button> 
+    </td>
+  </tr>
+</template>

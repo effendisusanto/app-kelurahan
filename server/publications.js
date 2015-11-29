@@ -9,7 +9,3 @@ Meteor.publish("kelahiran", function(){
 Meteor.publish("komentar", function(){
 	return Komentar.find({});
 });
-
-// Meteor.publish("ktp", function(){
-//     return ktp.find({});
-// });
