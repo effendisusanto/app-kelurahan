@@ -14,7 +14,9 @@ Template.tasktodo.events({
 		var suket = this.jenisSuket;
 		switch(suket){
 			case "Keterangan Kelahiran":
-				Router.go('/detailskelahiran/'+mainid);
+				var kelahiran = Kelahiran.findOne({mainId:mainid})
+				$('#page-wrapper').html("");
+				UI.insert(UI.renderWithData(Template.kelahirandetail, kelahiran), $('#page-wrapper').get(0));
 				break;
 		}
 	},

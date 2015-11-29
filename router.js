@@ -25,11 +25,3 @@ Router.route('/ktp/daftar_ktp', {
 Router.route('/appsuket/miskin', {
   template: "tmp_add_miskin"
 })
-Router.route('/detailskelahiran/:_id', {
-	template: "kelahirandetail",
-	data: function(){
-		var params = this.params;
-		var id = params._id;
-		return Kelahiran.findOne({mainId:id});;
-	}
-})

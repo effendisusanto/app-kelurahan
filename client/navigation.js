@@ -48,6 +48,10 @@ Template.navigation.events({
 		$('#page-wrapper').html("");
 		return UI.insert(UI.render(Template.register), $('#page-wrapper').get(0));
 	},
+	'click #TaskTodo': function(){
+		$('#page-wrapper').html("");
+		return UI.insert(UI.render(Template.tasktodo), $('#page-wrapper').get(0));
+	},
 	'click #Logout': function(event){
         event.preventDefault();
         Meteor.logout();
