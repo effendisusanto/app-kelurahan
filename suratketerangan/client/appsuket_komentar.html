@@ -1,0 +1,43 @@
+<template name="komentar">
+	<ul class="chat">
+	    {{#each listKomentar}}
+	    <li class="left clearfix">
+	        <span class="chat-img pull-left">
+	            <img src="http://placehold.it/50/55C1E7/fff" alt="User Avatar" class="img-circle">
+	        </span>
+	        <div class="chat-body clearfix">
+	            <div class="header">
+	                <strong class="primary-font">{{user}}</strong>
+	                <small class="pull-right text-muted">
+	                    <i class="fa fa-clock-o fa-fw"></i> {{tglPembuatan}}
+	                </small>
+	            </div>
+	            <p>{{komentar}}</p>
+	        </div>
+	    </li>
+	    {{/each}}
+	    <form role="form" data-toggle="validator" id="formKomentar">
+	    <li class="left clearfix">
+	        <span class="chat-img pull-left">
+	            <img src="http://placehold.it/50/55C1E7/fff" alt="User Avatar" class="img-circle">
+	        </span>
+	        <div class="chat-body clearfix">
+	            <div class="header">
+	                <strong class="primary-font">Jack Sparrow</strong>
+	                <small class="pull-right text-muted">
+	                    <i class="fa fa-clock-o fa-fw"></i> now
+	                </small>
+	            </div>
+	            <textarea id="komentar" style="width:100%" data-error="harus diisi" required></textarea>
+	            <div class="help-block with-errors"></div>
+	        </div>
+	    </li>
+	    <li class="left clearfix">
+	    	<div class="chat-body clearfix">
+	    		<button class="btn btn-danger" id="reject" type="submit"> Reject</button>
+	    		<button class="btn btn-success" id="approve" type="submit"> Approve</button>
+	    	</div>
+	    </li>
+	    </form>
+	</ul>                        
+</template>

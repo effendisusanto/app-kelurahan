@@ -66,8 +66,6 @@ Template.kelahiran.onRendered(function() {
             }
             Session.set("noPendaftaran", result);
             $("#myModal").modal("show");
-            //Router.go("/appsuket/download/" + result);
-            
             });
         }
     }
