@@ -9,7 +9,7 @@ Meteor.methods({
       mainId = Main.insert({
         jenisSuket: jenisSuket,
         namaPelapor: namaPelapor,
-        tanggalPembuatan: moment(date).format("dddd, D MMMM YYYY, h:mm"),
+        tanggalPembuatan: moment(date).format("dddd, D MMMM YYYY, H:mm"),
         tanggalUpdate: "",
         tanggalCetak: "",
         status: status
@@ -95,8 +95,8 @@ Meteor.methods({
       Komentar.insert({
         mainId: id,
         komentar: komentar,
-        user: user,
-        tglPembuatan: moment(date).format("dddd, D MMMM YYYY, h:mm")
+        userId: user,
+        tglPembuatan: moment(date).format("dddd, D MMMM YYYY, H:mm")
       }, {tx: true});
       tx.commit();
     }//,

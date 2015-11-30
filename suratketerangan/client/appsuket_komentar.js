@@ -7,7 +7,10 @@ Template.komentar.onRendered(function(){
 
 Template.komentar.helpers({
 	listKomentar: function(){
-		return Komentar.find({mainId:this.mainId});
+        return Komentar.find({mainId:this.mainId});
+	},
+	penulis: function(){
+		return Meteor.users.findOne(this.userId);
 	}
 });
 
