@@ -7,7 +7,7 @@ Template.komentar.onRendered(function(){
 
 Template.komentar.helpers({
 	listKomentar: function(){
-		return Komentar.find({mainId:this.mainId})
+		return Komentar.find({mainId:this.mainId});
 	}
 });
 
@@ -30,7 +30,7 @@ Template.komentar.events({
 				break;
 		}
 		// TODO: add user
-		Meteor.call("approval", id, moment(date).format("dddd, D MMMM YYYY, h:mm"), status, komentar, "");
+		Meteor.call("approval", id, moment(date).format("dddd, D MMMM YYYY, h:mm"), status, komentar, Meteor.userId());
 		$("#komentar").val("");
 		$('#page-wrapper').html("");
 		return UI.insert(UI.render(Template.tasktodo), $('#page-wrapper').get(0));
@@ -50,7 +50,7 @@ Template.komentar.events({
 				break;
 		}
 		// TODO: add user
-		Meteor.call("approval", id, moment(date).format("dddd, D MMMM YYYY, h:mm"), status, komentar, "");
+		Meteor.call("approval", id, moment(date).format("dddd, D MMMM YYYY, h:mm"), status, komentar, Meteor.userId());
 		$("#komentar").val();
 		$('#page-wrapper').html("");
 		return UI.insert(UI.render(Template.tasktodo), $('#page-wrapper').get(0));

@@ -19,13 +19,16 @@ Template.login.events({
                         UI.insert(UI.render(Template.appsukethome), $('#page-wrapper').get(0));
                         break;
                     case "Staff":
-                        Router.go("/appsuket/staff")
+                        $('#page-wrapper').html("");
+                        UI.insert(UI.render(Template.tasktodo), $('#page-wrapper').get(0));
                         break;
                     case "Kasi":
-                        Router.go("/appsuket/kasi")
+                        $('#page-wrapper').html("");
+                        UI.insert(UI.render(Template.tasktodo), $('#page-wrapper').get(0));
                         break;
                     default:
-                        Router.go("/")
+                        $('#page-wrapper').html("");
+                        UI.insert(UI.render(Template.tasktodo), $('#page-wrapper').get(0));
                         break;
                 }
 	    	}
@@ -34,5 +37,8 @@ Template.login.events({
     'click .logout': function(event){
         event.preventDefault();
         Meteor.logout();
+        $('#page-wrapper').html("");
+        UI.insert(UI.render(Template.appsukethome), $('#page-wrapper').get(0));
+        return Router.go("/");
     }
 });

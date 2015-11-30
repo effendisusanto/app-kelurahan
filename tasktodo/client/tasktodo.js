@@ -1,10 +1,21 @@
-Meteor.subscribe("main")
+Meteor.subscribe("mainTodo")
 Meteor.subscribe("kelahiran")
-Meteor.subscribe("komentar")
 
 Template.tasktodo.helpers({
 	dfts: function(){
-		return Main.find({});
+		if(!Meteor.userId()){
+			return [];
+		}
+		var user = Meteor.users.findOne({_id:Meteor.userId()});
+		var role = user.profile.groupLogin;
+		switch(role){
+			case "Staff":
+				return Main.find({status:"Staff Kelurahan"});
+			case "Sekertaris Lurah":
+				return Main.find({status:"Sekertaris Lurah"});
+			case "Lurah":
+				return Main.find({status:"Lurah"});
+		}
 	}
 });
 
@@ -19,13 +30,5 @@ Template.tasktodo.events({
 				UI.insert(UI.renderWithData(Template.kelahirandetail, kelahiran), $('#page-wrapper').get(0));
 				break;
 		}
-	},
-	'click #approvalStaf': function(){
-		var komentarStaff = $("#komentarStaff").val();
-		var id = $("#theid").val()
-		var date = new Date();
-		var status = "Sekertaris Lurah";
-		var result = Meteor.call("approval", id, moment(date).format("dddd, D MMMM YYYY, h:mm"), status, komentarStaff, "");
-        $('#modaldetail').modal('hide')
 	}
 })
