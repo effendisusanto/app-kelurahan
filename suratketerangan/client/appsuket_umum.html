@@ -1,37 +1,39 @@
 <template name="appsuketumum">
-  {{!-- >appsuketnavigation --}}
-  <div class="container">
-  <div class="table-responsive">
-    <table class="table table-hover">
-      <thead>
-        <tr>
-          <th>No Pendaftaran</th>
-          <th>Nama Pelapor</th>
-          <th>Jenis Surat Keterangan</th>
-          <th>Tanggal Pembuatan</th>
-          <th>Tanggal Update</th>
-          <th>Tanggal Cetak</th>
-          <th>Status Persetujuan</th>
-        </tr>
-      </thead>
-      <tbody>
-        {{#each dfts}}
-          {{>appsukettablerowumum}}
-        {{/each}}
-      </tbody>
-    </table>
-  </div>
-  </div>
+    <div class="row">
+        <!-- Page Header -->
+        <div class="col-lg-12">
+            <h1 class="page-header">Daftar Surat</h1>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <div class="table-responsive">
+                <table class="table table-hover">
+                    <thead>
+                        <tr>
+                            <th>Nama Pelapor</th>
+                            <th>Jenis Surat Keterangan</th>
+                            <th>Tanggal Pembuatan</th>
+                            <th>Tanggal Update</th>
+                            <th>Tanggal Cetak</th>
+                            <th>Status Persetujuan</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {{#each dfts}} {{>appsukettablerowumum}} {{/each}}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
 </template>
-
 <template name="appsukettablerowumum">
-  <tr>
-    <td>{{_id}}</td>
-    <td>{{namaPelapor}}</td>
-    <td>{{jenisSuket}}</td>
-    <td>{{tanggalPembuatan}}</td>
-    <td>{{tanggalUpdate}}</td>
-    <td>{{tanggalCetak}}</td>
-    <td>{{status}}</td>
-  </tr>
+    <tr>
+        <td>{{namaPelapor}}</td>
+        <td>{{jenisSuket}}</td>
+        <td>{{formatTime tanggalPembuatan}}</td>
+        <td>{{formatTime tanggalUpdate}}</td>
+        <td>{{formatTime tanggalCetak}}</td>
+        <td>{{status}}</td>
+    </tr>
 </template>

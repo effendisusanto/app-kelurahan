@@ -40,10 +40,8 @@ Template.komentar.events({
                 break;
         }
         // TODO: add user
-        Meteor.call("approval", id, moment(date).format("dddd, D MMMM YYYY, h:mm"), status, komentar, Meteor.userId());
-        $("#komentar").val("");
-        $('#page-wrapper').html("");
-        return UI.insert(UI.render(Template.tasktodo), $('#page-wrapper').get(0));
+        Meteor.call("approval", id, new Date(), status, komentar, Meteor.userId());
+        Router.go("tasktodo")
     },
     'click #reject': function() {
         var date = new Date();
@@ -65,9 +63,7 @@ Template.komentar.events({
                 break;
         }
         // TODO: add user
-        Meteor.call("approval", id, moment(date).format("dddd, D MMMM YYYY, h:mm"), status, komentar, Meteor.userId());
-        $("#komentar").val();
-        $('#page-wrapper').html("");
-        return UI.insert(UI.render(Template.tasktodo), $('#page-wrapper').get(0));
+        Meteor.call("approval", id, new Date(), status, komentar, Meteor.userId());
+        Router.go("tasktodo")
     }
 });

@@ -9,22 +9,39 @@ Router.route('/', {
         'appsuketmodal': {
             to: 'modal'
         }
+    },
+    onBeforeAction: function() {
+        if (Meteor.userId() && Meteor.loggingIn()) {
+            this.redirect("tasktodo")
+        } else {
+            this.next()
+        }
     }
 });
 
-Router.onBeforeAction(function () {
+Router.onBeforeAction(function() {
     if (!Meteor.userId() && !Meteor.loggingIn()) {
         Router.go("home")
     } else {
         this.next()
     }
 }, {
-	// semua link yang private ada disini
-    only:['tasktodo', 'kelahiranview']
+    // semua link yang private ada disini
+    only: ['tasktodo', 'kelahiranview', 'cetak', "register"]
 });
 
 Router.route('/umum', {
-    template: "appsuketumum"
+    name: "umum",
+    template: "appsuketumum",
+    layoutTemplate: "index",
+    yieldTemplates: {
+        'navigation': {
+            to: 'nav'
+        },
+        'appsuketmodal': {
+            to: 'modal'
+        }
+    }
 });
 
 Router.route('/tasktodo', {
@@ -61,7 +78,7 @@ Router.route('/suket/kelahiran', {
 });
 
 Router.route('/suket/kelahiran/view/:_id', {
-	name:'kelahiranview',
+    name: 'kelahiranview',
     template: 'kelahirandetailview',
     layoutTemplate: "index_login",
     yieldTemplates: {
@@ -184,6 +201,28 @@ Router.route('/ijin/tidakmasuk', {
         },
         'appsuketmodal': {
             to: 'modal'
+        }
+    }
+});
+
+Router.route("/cetak", {
+	name:"cetak",
+	template: "appsuketcetak",
+	layoutTemplate: "index_login",
+	yieldTemplates:{
+		'navigation_login': {
+			to: 'nav'
+		}
+	}
+})
+
+Router.route('/register', {
+    name: "register",
+    tempalte: "register",
+    layoutTemplate: "index_login",
+    yieldTemplates: {
+        'navigation_login': {
+            to: 'nav'
         }
     }
 });

@@ -1,12 +1,18 @@
-Template.appsuketstaffcetak.helpers({
+Meteor.subscribe("mainTodo")
+
+Template.appsuketcetak.helpers({
 	dfts: function(){
-		return Kelahiran.find({status:"Cetak"});
+		return Main.find({$or:[{status:"Cetak"}, {status:"Sudah Dicetak"}]});
 	}
 });
 
-Template.appsuketstaffcetak.events({
+Template.appsuketcetak.events({
 	'click .btn-info': function(){
 		var id = this._id;
-		Router.go("/appsuket/download/" + id);
+		var suket = this.jenisSuket;
+		switch(suket){
+			case "Keterangan Kelahiran":
+			Router.go("/cetak/kelahiran/" + id);
+		}
 	}
 });

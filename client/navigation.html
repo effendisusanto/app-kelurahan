@@ -1,81 +1,84 @@
 <template name="navigation">
-<nav class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0">
-  <div class="navbar-header">
-      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-          <span class="sr-only">Toggle navigation</span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-      </button>
-      <a class="navbar-brand" href="index.html">Kelurahan Kraksaan Wetan</a>
-  </div>
-  <!-- /.navbar-top-links -->
-  <div class="navbar-default sidebar" role="navigation">
-      <div class="sidebar-nav navbar-collapse">
-          <ul class="nav in metismenu" id="side-menu">
-            <li class="sidebar-search">
-                <div class="input-group custom-search-form">
-                    <input class="form-control" placeholder="Search..." type="text">
-                    <span class="input-group-btn">
+    <nav class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="index.html">Kelurahan Kraksaan Wetan</a>
+        </div>
+        <!-- /.navbar-top-links -->
+        <div class="navbar-default sidebar" role="navigation">
+            <div class="sidebar-nav navbar-collapse">
+                <ul class="nav in metismenu" id="side-menu">
+                    <li class="sidebar-search">
+                        <div class="input-group custom-search-form">
+                            <input class="form-control" placeholder="Search..." type="text">
+                            <span class="input-group-btn">
                     <button class="btn btn-default" type="button">
                         <i class="fa fa-search"></i>
                     </button>
                 </span>
-                </div>
-                <!-- /input-group -->
-            </li>
-            <li>
-                <a href="/" id="home"><i class="fa fa-home fa-fw"></i> Home</a>
-            </li>
-            <li>
-              <a href="#"><i class="fa fa-file-text-o fa-fw"></i> Surat Keterangan <span class="fa arrow"></span></a>
-              <ul class="nav nav-second-level collapse">
-                  <li>
-                      <a href="/suket/kelahiran" id="kelahiran"><i class="fa fa-file-text-o fa-fw"></i> Kelahiran</a>
-                  </li>
-                  <li>
-                      <a href="/suket/kematian" id="kematian"><i class="fa fa-file-text-o fa-fw"></i> Kematian</a>
-                  </li>
-                  <li>
-                      <a href="/suket/miskin" id="miskin"><i class="fa fa-file-text-o fa-fw"></i> Miskin</a>
-                  </li>
-                  <li>
-                      <a href="/suket/usaha" id="usaha"><i class="fa fa-file-text-o fa-fw"></i> Usaha</a>
-                  </li>
-                  <li>
-                      <a href="/suket/kehilangan" id="kehilangan"><i class="fa fa-file-text-o fa-fw"></i> Kehilangan</a>
-                  </li>
-                  <li>
-                      <a href="/suket/skck" id="skck"><i class="fa fa-file-text-o fa-fw"></i> SKCK</a>
-                  </li>
-              </ul>
-            </li>
-            <li>
-              <a href="#"><i class="fa fa-file-text-o fa-fw"></i> Surat Ijin <span class="fa arrow"></span></a>
-              <ul class="nav nav-second-level collapse">
-                <li>
-                  <a href="/ijin/orangtua" id="orangtua"><i class="fa fa-file-text-o fa-fw"></i> Orang Tua</a>
-                </li>
-                <li>
-                  <a href="/ijin/tidakmasukkerja" id="tdkkerja"><i class="fa fa-file-text-o fa-fw"></i> Tidak Masuk Kerja</a>
-                </li>
-                <li>
-                  <a href="/ijin/tidakmasuk" id="tdkmasuk"><i class="fa fa-file-text-o fa-fw"></i> Tidak Masuk</a>
-                </li>
-              </ul>
-            </li>
-            <li>
-              <a href="#"><i class="fa fa-cogs fa-fw"></i> Administrasi <span class="fa arrow"></span></a>
-              <ul class="nav nav-second-level collapse">
-                  <li>
-                      <a href="/login" id="Login"><i class="fa fa-sign-in fa-fw"></i> Login</a>
-                  </li>
-              </ul>
-            </li>
-          </ul>
-      </div>
-      <!-- /.sidebar-collapse -->
-  </div>
-  <!-- /.navbar-static-side -->
-</nav>
+                        </div>
+                        <!-- /input-group -->
+                    </li>
+                    <li>
+                        <a href="/" id="home"><i class="fa fa-home fa-fw"></i> Home</a>
+                    </li>
+                    <li>
+                        <a href="/umum" id="daftar"><i class="fa fa-home fa-fw"></i> Daftar Permohonan</a>
+                    </li>
+                    <li>
+                        <a href="#"><i class="fa fa-file-text-o fa-fw"></i> Surat Keterangan <span class="fa arrow"></span></a>
+                        <ul class="nav nav-second-level collapse">
+                            <li>
+                                <a href="/suket/kelahiran" id="kelahiran"><i class="fa fa-file-text-o fa-fw"></i> Kelahiran</a>
+                            </li>
+                            <li>
+                                <a href="/suket/kematian" id="kematian"><i class="fa fa-file-text-o fa-fw"></i> Kematian</a>
+                            </li>
+                            <li>
+                                <a href="/suket/miskin" id="miskin"><i class="fa fa-file-text-o fa-fw"></i> Miskin</a>
+                            </li>
+                            <li>
+                                <a href="/suket/usaha" id="usaha"><i class="fa fa-file-text-o fa-fw"></i> Usaha</a>
+                            </li>
+                            <li>
+                                <a href="/suket/kehilangan" id="kehilangan"><i class="fa fa-file-text-o fa-fw"></i> Kehilangan</a>
+                            </li>
+                            <li>
+                                <a href="/suket/skck" id="skck"><i class="fa fa-file-text-o fa-fw"></i> SKCK</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#"><i class="fa fa-file-text-o fa-fw"></i> Surat Ijin <span class="fa arrow"></span></a>
+                        <ul class="nav nav-second-level collapse">
+                            <li>
+                                <a href="/ijin/orangtua" id="orangtua"><i class="fa fa-file-text-o fa-fw"></i> Orang Tua</a>
+                            </li>
+                            <li>
+                                <a href="/ijin/tidakmasukkerja" id="tdkkerja"><i class="fa fa-file-text-o fa-fw"></i> Tidak Masuk Kerja</a>
+                            </li>
+                            <li>
+                                <a href="/ijin/tidakmasuk" id="tdkmasuk"><i class="fa fa-file-text-o fa-fw"></i> Tidak Masuk</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#"><i class="fa fa-cogs fa-fw"></i> Administrasi <span class="fa arrow"></span></a>
+                        <ul class="nav nav-second-level collapse">
+                            <li>
+                                <a href="/login" id="Login"><i class="fa fa-sign-in fa-fw"></i> Login</a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.sidebar-collapse -->
+        </div>
+        <!-- /.navbar-static-side -->
+    </nav>
 </template>

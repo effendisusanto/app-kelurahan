@@ -1,32 +1,39 @@
-<template name="appsuketstaffcetak">
-  <div class="container">
-  <div class="table-responsive">
-    <table class="table table-hover">
-      <thead>
-        <tr>
-          <th>Nama Pelapor</th>
-          <th>Jenis Surat Keterangan</th>
-          <th>Tanggal Pembuatan</th>
-          <th>Action</th>
-        </tr>
-      </thead>
-      <tbody>
-        {{#each dfts}}
-          {{>appsukettablerowcetak}}
-        {{/each}}
-      </tbody>
-    </table>
-  </div>
-  </div>
+<template name="appsuketcetak">
+    <div class="row">
+        <!-- Page Header -->
+        <div class="col-lg-12">
+            <h1 class="page-header">Daftar Surat Siap Cetak</h1>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <div class="table-responsive">
+                <table class="table table-hover">
+                    <thead>
+                        <tr>
+                            <th>Nama Pelapor</th>
+                            <th>Jenis Surat Keterangan</th>
+                            <th>Tanggal Pembuatan</th>
+                            <th>Status</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {{#each dfts}} {{>appsukettablerowcetak}} {{/each}}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
 </template>
-
 <template name="appsukettablerowcetak">
-  <tr>
-    <td>{{namaPelapor}}</td>
-    <td>{{jenisSuket}}</td>
-    <td>{{tanggalPembuatan}}</td>
-    <td>
-    <button class="btn btn-info btn-xs"><span class="glyphicon glyphicon-print"></span> Cetak</button> 
-    </td>
-  </tr>
+    <tr>
+        <td>{{namaPelapor}}</td>
+        <td>{{jenisSuket}}</td>
+        <td>{{formatTime tanggalPembuatan}}</td>
+        <td>{{status}}</td>
+        <td>
+            <button class="btn btn-info btn-xs"><span class="glyphicon glyphicon-print"></span> Cetak</button>
+        </td>
+    </tr>
 </template>

@@ -1,7 +1,7 @@
 var fs = Meteor.npmRequire('fs');
 var Docxtemplater = Meteor.npmRequire('docxtemplater');
 
-Router.route('/appsuket/download/:_id', {where: 'server'}).get(function(){
+Router.route('/cetak/kelahiran/:_id', {where: 'server'}).get(function(){
 //Load the docx file as a binary
 var params = this.params;
 var id = params._id;
@@ -10,8 +10,8 @@ var __dirname = process.env.PWD
 var content = fs.readFileSync(__dirname + "/template/templateSuketKelahiran.docx", "binary");
 
 var doc = new Docxtemplater(content);
-
-var datadb = Kelahiran.findOne(id);
+console.log(id)
+var datadb = Kelahiran.findOne({mainId:id});
 //set the templateVariables
 doc.setData({
     "namaAnak":datadb.namaAnak,
@@ -38,8 +38,7 @@ doc.setData({
     "hubPelapor":datadb.hubPelapor,
     "tanggalCetak":moment(date).format("D MMMM YYYY")
 });
-    
-//apply them (replace all occurences of {first_name} by Hipp, ...)
+
 doc.render();
 
 var buf = doc.getZip().generate({type:"nodebuffer"});
@@ -51,7 +50,7 @@ this.response.writeHead(200, {
   'Content-Disposition': 'attachment; filename=' + datadb.namaPelapor + moment(date).format("DMMMMYYYY") + ".docx"
 });
 
-Meteor.call('cetakSuket',id, moment(date).format("dddd, D MMMM YYYY, h:mm"), moment(date).format("dddd, D MMMM YYYY, h:mm"), "Selesai");
+Meteor.call('cetakSuket',id, date, date, "Sudah Dicetak");
 // Pipe the file contents to the response
 fs.createReadStream(__dirname + "/docxdocument/" + datadb.namaPelapor + moment(date).format("DMMMMYYYY") + ".docx").pipe(this.response);
 });

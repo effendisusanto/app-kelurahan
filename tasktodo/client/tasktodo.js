@@ -1,5 +1,4 @@
 Meteor.subscribe("mainTodo")
-Meteor.subscribe("kelahiran")
 
 Template.tasktodo.helpers({
 	dfts: function(){
@@ -26,10 +25,6 @@ Template.tasktodo.events({
 		switch(suket){
 			case "Keterangan Kelahiran":
 				Router.go("/suket/kelahiran/view/" + mainid)
-				// var kelahiran = Kelahiran.findOne({mainId:mainid})
-				// $('#page-wrapper').html("");
-				// UI.insert(UI.renderWithData(Template.kelahirandetail, kelahiran), $('#page-wrapper').get(0));
-				// break;
 		}
 	}
 })
