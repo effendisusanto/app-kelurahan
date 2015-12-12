@@ -15,30 +15,11 @@ Template.login.events({
 	        	var groupLogin = Meteor.user().profile.groupLogin
                 switch(groupLogin){
                     case "Administrator":
-                        $('#page-wrapper').html("");
-                        UI.insert(UI.render(Template.appsukethome), $('#page-wrapper').get(0));
-                        break;
-                    case "Staff":
-                        $('#page-wrapper').html("");
-                        UI.insert(UI.render(Template.tasktodo), $('#page-wrapper').get(0));
-                        break;
-                    case "Kasi":
-                        $('#page-wrapper').html("");
-                        UI.insert(UI.render(Template.tasktodo), $('#page-wrapper').get(0));
-                        break;
+                        Router.go("home")
                     default:
-                        $('#page-wrapper').html("");
-                        UI.insert(UI.render(Template.tasktodo), $('#page-wrapper').get(0));
-                        break;
+                        Router.go("tasktodo")
                 }
 	    	}
 		});
-    },
-    'click .logout': function(event){
-        event.preventDefault();
-        Meteor.logout();
-        $('#page-wrapper').html("");
-        UI.insert(UI.render(Template.appsukethome), $('#page-wrapper').get(0));
-        return Router.go("/");
     }
 });

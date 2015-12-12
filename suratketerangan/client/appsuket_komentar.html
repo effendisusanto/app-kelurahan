@@ -15,7 +15,7 @@
                             <div class="header">
                                 <strong class="primary-font">{{penulis.profile.namaDepan}} {{penulis.profile.namaBelakang}}</strong>
                                 <small class="pull-right text-muted">
-		                    <i class="fa fa-clock-o fa-fw"></i> {{tglPembuatan}}
+		                    <i class="fa fa-clock-o fa-fw"></i> {{fromNow tglPembuatan}}
 		                </small>
                             </div>
                             <p>{{komentar}}</p>
@@ -31,7 +31,7 @@
                                 <div class="header">
                                     <strong class="primary-font">{{currentUser.profile.namaDepan}} {{currentUser.profile.namaBelakang}}</strong>
                                     <small class="pull-right text-muted">
-		                    <i class="fa fa-clock-o fa-fw"></i> now
+		                    <i class="fa fa-clock-o fa-fw"></i> sekarang
 		                </small>
                                 </div>
                                 <textarea id="komentar" style="width:100%" data-error="harus diisi" required></textarea>

@@ -9,28 +9,6 @@
       </button>
       <a class="navbar-brand" href="index.html">Kelurahan Kraksaan Wetan</a>
   </div>
-  <!-- /.navbar-header -->
-  {{#if currentUser}}
-  <ul class="nav navbar-top-links navbar-right">
-      <!-- /.dropdown -->
-      <li class="dropdown">
-          <a class="dropdown-toggle" data-toggle="dropdown" href="#">
-              <i class="fa fa-user fa-fw"></i> {{currentUser.profile.namaDepan}} {{currentUser.profile.namaBelakang}} <i class="fa fa-caret-down"></i>
-          </a>
-          <ul class="dropdown-menu dropdown-user">
-              <li><a href="#"><i class="fa fa-user fa-fw"></i> User Profile</a>
-              </li>
-              <li><a href="#"><i class="fa fa-gear fa-fw"></i> Settings</a>
-              </li>
-              <li class="divider"></li>
-              <li><a href="#" id="Logout"><i class="fa fa-sign-out fa-fw"></i> Logout</a>
-              </li>
-          </ul>
-          <!-- /.dropdown-user -->
-      </li>
-      <!-- /.dropdown -->
-  </ul>
-  {{/if}}
   <!-- /.navbar-top-links -->
   <div class="navbar-default sidebar" role="navigation">
       <div class="sidebar-nav navbar-collapse">
@@ -47,28 +25,28 @@
                 <!-- /input-group -->
             </li>
             <li>
-                <a href="#" id="home"><i class="fa fa-home fa-fw"></i> Home</a>
+                <a href="/" id="home"><i class="fa fa-home fa-fw"></i> Home</a>
             </li>
             <li>
               <a href="#"><i class="fa fa-file-text-o fa-fw"></i> Surat Keterangan <span class="fa arrow"></span></a>
               <ul class="nav nav-second-level collapse">
                   <li>
-                      <a href="#" id="kelahiran"><i class="fa fa-file-text-o fa-fw"></i> Kelahiran</a>
+                      <a href="/suket/kelahiran" id="kelahiran"><i class="fa fa-file-text-o fa-fw"></i> Kelahiran</a>
                   </li>
                   <li>
-                      <a href="#" id="kematian"><i class="fa fa-file-text-o fa-fw"></i> Kematian</a>
+                      <a href="/suket/kematian" id="kematian"><i class="fa fa-file-text-o fa-fw"></i> Kematian</a>
                   </li>
                   <li>
-                      <a href="#" id="miskin"><i class="fa fa-file-text-o fa-fw"></i> Miskin</a>
+                      <a href="/suket/miskin" id="miskin"><i class="fa fa-file-text-o fa-fw"></i> Miskin</a>
                   </li>
                   <li>
-                      <a href="#" id="usaha"><i class="fa fa-file-text-o fa-fw"></i> Usaha</a>
+                      <a href="/suket/usaha" id="usaha"><i class="fa fa-file-text-o fa-fw"></i> Usaha</a>
                   </li>
                   <li>
-                      <a href="#" id="kehilangan"><i class="fa fa-file-text-o fa-fw"></i> Kehilangan</a>
+                      <a href="/suket/kehilangan" id="kehilangan"><i class="fa fa-file-text-o fa-fw"></i> Kehilangan</a>
                   </li>
                   <li>
-                      <a href="#" id="skck"><i class="fa fa-file-text-o fa-fw"></i> SKCK</a>
+                      <a href="/suket/skck" id="skck"><i class="fa fa-file-text-o fa-fw"></i> SKCK</a>
                   </li>
               </ul>
             </li>
@@ -76,34 +54,22 @@
               <a href="#"><i class="fa fa-file-text-o fa-fw"></i> Surat Ijin <span class="fa arrow"></span></a>
               <ul class="nav nav-second-level collapse">
                 <li>
-                  <a href="#" id="orangtua"><i class="fa fa-file-text-o fa-fw"></i> Orang Tua</a>
+                  <a href="/ijin/orangtua" id="orangtua"><i class="fa fa-file-text-o fa-fw"></i> Orang Tua</a>
                 </li>
                 <li>
-                  <a href="#" id="tdkkerja"><i class="fa fa-file-text-o fa-fw"></i> Tidak Masuk Kerja</a>
+                  <a href="/ijin/tidakmasukkerja" id="tdkkerja"><i class="fa fa-file-text-o fa-fw"></i> Tidak Masuk Kerja</a>
                 </li>
                 <li>
-                  <a href="#" id="tdkmasuk"><i class="fa fa-file-text-o fa-fw"></i> Tidak Masuk</a>
+                  <a href="/ijin/tidakmasuk" id="tdkmasuk"><i class="fa fa-file-text-o fa-fw"></i> Tidak Masuk</a>
                 </li>
               </ul>
             </li>
             <li>
               <a href="#"><i class="fa fa-cogs fa-fw"></i> Administrasi <span class="fa arrow"></span></a>
               <ul class="nav nav-second-level collapse">
-                  {{#if currentUser}}
                   <li>
-                      <a href="#" id="TaskTodo"><i class="fa fa-list fa-fw"></i> Task Todo</a>
+                      <a href="/login" id="Login"><i class="fa fa-sign-in fa-fw"></i> Login</a>
                   </li>
-                  <li>
-                      <a href="#" id="Register"><i class="fa fa-plus fa-fw"></i> Register</a>
-                  </li>
-                  <li>
-                      <a href="#" id="Logout"><i class="fa fa-sign-out fa-fw"></i> Logout</a>
-                  </li>
-                  {{else}}
-                  <li>
-                      <a href="#" id="Login"><i class="fa fa-sign-in fa-fw"></i> Login</a>
-                  </li>
-                  {{/if}}
               </ul>
             </li>
           </ul>

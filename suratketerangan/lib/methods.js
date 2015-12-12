@@ -3,13 +3,12 @@ Meteor.methods({
     namaIbu, nikIbu, umurIbu, pekerjaanIbu, alamatIbu, 
     namaAyah, nikAyah, umurAyah, pekerjaanAyah, alamatAyah, 
     namaPelapor, nikPelapor, umurPelapor, pekerjaanPelapor, alamatPelapor, hubPelapor, status){
-      var date = new Date();
       var mainId
       tx.start('add new surat kelahiran')
       mainId = Main.insert({
         jenisSuket: jenisSuket,
         namaPelapor: namaPelapor,
-        tanggalPembuatan: moment(date).format("dddd, D MMMM YYYY, H:mm"),
+        tanggalPembuatan: new Date(),
         tanggalUpdate: "",
         tanggalCetak: "",
         status: status

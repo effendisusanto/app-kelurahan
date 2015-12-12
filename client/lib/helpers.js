@@ -21,3 +21,13 @@ Template.registerHelper("isStaff", function(staff){
 		return true
 	}
 });
+
+Template.registerHelper("formatTime", function(date) {
+    if(date)
+        return moment(date).format("dddd, D MMMM YYYY, H:mm")
+});
+
+Template.registerHelper("fromNow", function(date){
+	if(date)
+		return moment(date).fromNow()
+})
