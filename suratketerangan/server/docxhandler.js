@@ -10,7 +10,6 @@ var __dirname = process.env.PWD
 var content = fs.readFileSync(__dirname + "/template/templateSuketKelahiran.docx", "binary");
 
 var doc = new Docxtemplater(content);
-console.log(id)
 var datadb = Kelahiran.findOne({mainId:id});
 //set the templateVariables
 doc.setData({

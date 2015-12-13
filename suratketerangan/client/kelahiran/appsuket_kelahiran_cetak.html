@@ -1,0 +1,127 @@
+<template name="kelahirandetailcetak">
+    <div class="row">
+        <!-- Page Header -->
+        <div class="col-lg-12">
+            <h1 class="page-header">Surat Keterangan Kelahiran</h1>
+        </div>
+    </div>
+    <!-- /.row -->
+    <div class="row">
+        <div class="form-group">
+            <label for="namaAnak">Nama Anak</label>
+            <input type="text" class="form-control" id="namaAnak" data-error="harus diisi" disabled="disabled" value="{{namaAnak}}" />
+        </div>
+        <div class="form-group">
+            <label for="hariLahir">Hari</label>
+            <input type="text" class="form-control" id="hariLahir" disabled="disabled" value="{{hariLahir}}">
+        </div>
+        <div class="form-group">
+            <label for="tglLahir">Tanggal</label>
+            <div class='input-group date' id="tglLahirdate">
+                <input type='text' class="form-control" id="tglLahir" data-error="harus diisi" readonly="readonly" required value="{{tanggalLahir}}" />
+                <span class="input-group-addon">
+                    <span class="glyphicon glyphicon-calendar"></span>
+                </span>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="jamLahir">Pukul</label>
+            <div class="input-group date" id="jamLahirjam">
+                <input type='text' class="form-control" id="jamLahir" data-error="harus diisi" readonly="readonly" required value="{{jamLahir}}" />
+                <span class="input-group-addon">
+                    <span class="glyphicon glyphicon-time"></span>
+                </span>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="jenisKelamin">Jenis Kelamin</label>
+            <input type="text" class="form-control" id="jenisKelamin" disabled="disabled" value="{{jenisKelamin}}">
+        </div>
+        <div class="form-group">
+            <label for="tempatLahir">Tempat Kelahiran</label>
+            <input type="text" class="form-control" id="tempatLahir" data-error="harus diisi" disabled="disabled" value="{{tempatLahir}}" />
+            <div class="help-block with-errors"></div>
+        </div>
+        <div class="form-group">
+            <label for="namaIbu">Nama Lengkap Ibu</label>
+            <input type="text" class="form-control" id="namaIbu" data-error="harus diisi" disabled="disabled" value="{{namaIbu}}" />
+            <div class="help-block with-errors"></div>
+        </div>
+        <div class="form-group">
+            <label for="nikIbu">NIK Ibu</label>
+            <input type="text" class="form-control" id="nikIbu" pattern="[0-9]{16}" data-error="harus diisi atau data salah" disabled="disabled" value="{{nikIbu}}" />
+        </div>
+        <div class="form-group">
+            <label for="umurIbu">Umur Ibu</label>
+            <div class='input-group'>
+                <input type='number' class="form-control" id="umurIbu" data-error="harus diisi" min="10" max="130" disabled="disabled" value="{{umurIbu}}" />
+                <span class="input-group-addon">
+                    tahun
+                </span>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="pekerjaanIbu">Pekerjaan Ibu</label>
+            <input type="text" class="form-control" id="pekerjaanIbu" data-error="harus diisi" disabled="disabled" value="{{pekerjaanIbu}}" />
+        </div>
+        <div class="form-group">
+            <label for="alamatIbu">Alamat Ibu</label>
+            <input type="text" class="form-control" id="alamatIbu" data-error="harus diisi" disabled="disabled" value="{{alamatIbu}}" />
+        </div>
+        <div class="form-group">
+            <label for="namaAyah">Nama Lengkap Ayah</label>
+            <input type="text" class="form-control" id="namaAyah" data-error="harus diisi" disabled="disabled" value="{{namaAyah}}" />
+        </div>
+        <div class="form-group">
+            <label for="nikAyah">NIK Ayah</label>
+            <input type="text" class="form-control" id="nikAyah" pattern="[0-9]{16}" data-error="harus diisi atau data salah" disabled="disabled" value="{{nikAyah}}" />
+        </div>
+        <div class="form-group">
+            <label for="umurAyah">Umur Ayah</label>
+            <div class='input-group'>
+                <input type='number' class="form-control" id="umurAyah" data-error="harus diisi" min="10" max="130" disabled="disabled" value="{{umurAyah}}" />
+                <span class="input-group-addon">
+                    tahun
+                </span>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="pekerjaanAyah">Pekerjaan Ayah</label>
+            <input type="text" class="form-control" id="pekerjaanAyah" data-error="harus diisi" disabled="disabled" value="{{pekerjaanAyah}}" />
+        </div>
+        <div class="form-group">
+            <label for="alamatAyah">Alamat Ayah</label>
+            <input type="text" class="form-control" id="alamatAyah" data-error="harus diisi" disabled="disabled" value="{{alamatAyah}}" />
+        </div>
+        <div class="form-group">
+            <label for="namaPelapor">Nama Lengkap Pelapor</label>
+            <input type="text" class="form-control" id="namaPelapor" data-error="harus diisi" disabled="disabled" value="{{namaPelapor}}" />
+        </div>
+        <div class="form-group">
+            <label for="nikPelapor">NIK Pelapor</label>
+            <input type="text" class="form-control" id="nikPelapor" pattern="[0-9]{16}" data-error="harus diisi atau data salah" disabled="disabled" value="{{nikPelapor}}" />
+        </div>
+        <div class="form-group">
+            <label for="umurPelapor">Umur Pelapor</label>
+            <div class='input-group'>
+                <input type='number' class="form-control" id="umurPelapor" data-error="harus diisi" min="10" max="130" disabled="disabled" value="{{umurPelapor}}" />
+                <span class="input-group-addon">
+                    tahun
+                </span>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="pekerjaanPelapor">Pekerjaan Pelapor</label>
+            <input type="text" class="form-control" id="pekerjaanPelapor" data-error="harus diisi" disabled="disabled" value="{{pekerjaanPelapor}}" />
+        </div>
+        <div class="form-group">
+            <label for="alamatPelapor">Alamat Pelapor</label>
+            <input type="text" class="form-control" id="alamatPelapor" data-error="harus diisi" disabled="disabled" value="{{alamatPelapor}}" />
+        </div>
+        <div class="form-group">
+            <label for="hubPelapor">Hubungan Pelapor dengan Bayi</label>
+            <input type="text" class="form-control" id="hubPelapor" disabled="disabled" value="{{hubPelapor}}">
+        </div>
+    </div>
+    {{>komentarcetak}}
+</template>

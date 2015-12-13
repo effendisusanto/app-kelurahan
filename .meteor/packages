@@ -31,3 +31,5 @@ mrt:bootstrap-select
 babrahams:transactions
 sergeyt:typeahead
 reywood:publish-composite
+bshamblen:morrisjs
+meteorhacks:aggregate

@@ -27,7 +27,7 @@ Router.onBeforeAction(function() {
     }
 }, {
     // semua link yang private ada disini
-    only: ['tasktodo', 'kelahiranview', 'cetak', "register"]
+    only: ['tasktodo', 'todokelahiranview', 'cetak', 'cetakview', "register"]
 });
 
 Router.route('/umum', {
@@ -55,6 +55,26 @@ Router.route('/tasktodo', {
     }
 });
 
+Router.route('/tasktodo/kelahiran/view/:_id', {
+    name: 'todokelahiranview',
+    template: 'kelahirandetailview',
+    layoutTemplate: "index_login",
+    yieldTemplates: {
+        'navigation_login': {
+            to: 'nav'
+        },
+    },
+    waitOn: function() {
+        return Meteor.subscribe('kelahiran');
+    },
+    data: function() {
+        var mainid = this.params._id;
+        return Kelahiran.findOne({
+            mainId: mainid
+        });
+    }
+});
+
 Router.route('/login', {
     name: "login",
     template: "login"
@@ -77,22 +97,7 @@ Router.route('/suket/kelahiran', {
     }
 });
 
-Router.route('/suket/kelahiran/view/:_id', {
-    name: 'kelahiranview',
-    template: 'kelahirandetailview',
-    layoutTemplate: "index_login",
-    yieldTemplates: {
-        'navigation_login': {
-            to: 'nav'
-        },
-    },
-    data: function() {
-        var mainid = this.params._id;
-        return Kelahiran.findOne({
-            mainId: mainid
-        })
-    }
-});
+
 
 Router.route('/suket/kematian', {
     name: "kematian",
@@ -206,14 +211,34 @@ Router.route('/ijin/tidakmasuk', {
 });
 
 Router.route("/cetak", {
-	name:"cetak",
-	template: "appsuketcetak",
-	layoutTemplate: "index_login",
-	yieldTemplates:{
-		'navigation_login': {
-			to: 'nav'
-		}
-	}
+    name: "cetak",
+    template: "appsuketcetak",
+    layoutTemplate: "index_login",
+    yieldTemplates: {
+        'navigation_login': {
+            to: 'nav'
+        }
+    }
+});
+
+Router.route("/cetak/kelahiran/view/:_id", {
+    name: "cetakview",
+    template: "kelahirandetailcetak",
+    layoutTemplate: "index_login",
+    yieldTemplates: {
+        'navigation_login': {
+            to: 'nav'
+        }
+    },
+    waitOn: function() {
+        return Meteor.subscribe('kelahiran');
+    },
+    data: function() {
+        var mainid = this.params._id;
+        return Kelahiran.findOne({
+            mainId: mainid
+        });
+    }
 })
 
 Router.route('/register', {

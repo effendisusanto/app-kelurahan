@@ -9,11 +9,11 @@ Template.tasktodo.helpers({
 		var role = user.profile.groupLogin;
 		switch(role){
 			case "Staff":
-				return Main.find({status:"Staff Kelurahan"});
+				return Main.find({status:"Staff Kelurahan"}, {sort: {tanggalPembuatan: -1}});
 			case "Sekertaris Lurah":
-				return Main.find({status:"Sekertaris Lurah"});
+				return Main.find({status:"Sekertaris Lurah"}, {sort: {tanggalPembuatan: -1}});
 			case "Lurah":
-				return Main.find({status:"Lurah"});
+				return Main.find({status:"Lurah"}, {sort: {tanggalPembuatan: -1}});
 		}
 	}
 });
@@ -24,7 +24,7 @@ Template.tasktodo.events({
 		var suket = this.jenisSuket;
 		switch(suket){
 			case "Keterangan Kelahiran":
-				Router.go("/suket/kelahiran/view/" + mainid)
+				Router.go("/tasktodo/kelahiran/view/" + mainid)
 		}
 	}
 })

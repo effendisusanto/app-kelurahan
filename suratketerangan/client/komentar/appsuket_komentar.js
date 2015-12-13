@@ -41,7 +41,7 @@ Template.komentar.events({
         }
         // TODO: add user
         Meteor.call("approval", id, new Date(), status, komentar, Meteor.userId());
-        Router.go("tasktodo")
+        Router.go("/tasktodo")
     },
     'click #reject': function() {
         var date = new Date();
@@ -62,8 +62,7 @@ Template.komentar.events({
                 status = "Staff Kelurahan"
                 break;
         }
-        // TODO: add user
         Meteor.call("approval", id, new Date(), status, komentar, Meteor.userId());
-        Router.go("tasktodo")
+        Router.go("/tasktodo")
     }
 });

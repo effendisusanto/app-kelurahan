@@ -22,9 +22,6 @@ Meteor.publish("kelahiran", function(){
 	return Kelahiran.find({});
 });
 
-// Meteor.publish("komentar", function(){
-// 	return Komentar.find({});
-// });
 Meteor.publishComposite("komentar", {
 	find: function() {
         return Komentar.find({});
@@ -36,4 +33,4 @@ Meteor.publishComposite("komentar", {
             }
         }
     ]
-})
+});
